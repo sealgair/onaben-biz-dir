@@ -1,0 +1,25 @@
+{% extends "directory/base.html" %}
+{% block title %}{{ biz.name }}{% endblock %}
+{% block purchaseinfo %} {% endblock %}
+
+{% block header %}
+	{{ block.super }}
+{% endblock %}
+
+{% block content %}
+<form id="register" action="/regsiter" method="POST">
+<ul>{{biz_form.as_ul}}</ul>
+
+<h4 style="float:left;clear:both;">Address:</h4>
+{% for addy_form in addy_formset.forms %}
+<ul>{{addy_form.as_ul}}</ul>
+{% endfor %}
+
+<h4 style="float:left;clear:both;">Phone Number:</h4>
+{% for phone_form in phone_formset.forms %}
+<ul>{{phone_form.as_ul}}</ul>
+{% endfor %}
+
+<input type="submit" value="Register"/>
+</form>
+{% endblock %}

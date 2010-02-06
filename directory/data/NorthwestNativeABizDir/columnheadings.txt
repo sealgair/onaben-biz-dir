@@ -1,0 +1,18 @@
+tblBiz-CategoryLink: NativeBizID, CategoryID
+
+Switchboard Items: SwitchboardID, ItemNumber, ItemText, Command, Argument
+
+tblBizAddyInfo:  NativeBizID, txtAddress, txtCity, txtState, txtZipCode, txtCountryOutsideUS, txtAddyType, DoNotPublishAddy
+
+tblBizCategories: CategoryID, Business Category
+
+tblBizInfo: NativeBizID, BusinessName, ContactFirstname, ContactLastname, ContactTitle, OwnershipTypeID, NW Region, BizWebsite, EmailAddress, Business description, StateDate, End Date, Home Based, FTE, PTE, Woman, Minority, SIC or Certification Type, E-mail List, Mailing List, Contact Me for Marketing Opps, ReferredBy, StillOperating, WillPublish, WillAdvertise, Date Registered, Last Updated, ReadytoPrint, Publish Online, OtherNotes
+
+tblBizOwnerInfo: Owner ID, Tribe, First Name, Last Name, Title, ONABEN Client
+
+tblBiz-OwnerLink: BizOwnerLinkID, NativeBizID, BizOwnerID, Active, StartDate, EndDate, NotesHistory
+
+tblBizPhoneNos: NativeBizID, PhoneType, PhoneNumber, Extension
+
+tblOwnershipType: Ownership Type ID, Form of Ownership
+

@@ -1,0 +1,20 @@
+{% extends "directory/base.html" %}
+{% block title %}{{ cat }}{% endblock %}
+
+{% block header %}
+	{{ block.super }}
+{% endblock %}
+
+{% block content %}
+	<h1>
+		Businesses in Category {{ cat }}
+	</h1>
+	
+	<ul>
+	{% for biz in cat.business_set.all %}
+		<li><a href="{% url one show_by='business' name=biz.name_url %}">{{ biz.name }}</a></li>
+	{% empty %}
+		<li> None </li>
+	{% endfor %}
+	</ul>
+{% endblock %}

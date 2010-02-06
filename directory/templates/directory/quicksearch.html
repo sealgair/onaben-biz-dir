@@ -1,0 +1,40 @@
+<html>
+<head>
+	<title>ONABEN Business Directory</title>
+</head>
+<body>
+	<h1>ONABEN Business Directory</h1>
+	<form action="{% url directory.views.quicksearch %}" method="post">
+		<input type="text" name="search" id="search" value="{{ search }}"/>
+		<input type="submit" value="Search"/>
+	</form>
+	{% regroup biz_list by alpha as group_list %}
+	{% for group in group_list %}
+	<h2>{{group.grouper}}</h2>
+		{% for biz in group.list %}
+		<h3>
+		  <a href="{% url directory.views.biz biz_name=biz.name_url %}">
+		    {{ biz.name }}
+		  </a>
+		</h3>
+		<ul> <lh>Categories	</lh>
+		{% for cat in biz.category_set.all %}
+			<li>{{cat}}</li>
+		{% empty %}
+			<li>none</li>
+		{% endfor %}
+		</ul>
+		{% endfor %}
+	{% endfor %}
+	
+	{% if prev_page %}
+		<a href="{% url directory.views.quicksearch search=search page=1 %}">First Page</a> |
+		<a href="{% url directory.views.quicksearch search=search page=prev_page %}">Previous Page</a>
+	{% endif %}
+	{% if prev_page and next_page %} | {% endif %} 
+	{% if next_page %}
+		<a href="{% url directory.views.quicksearch search=search page=next_page %}">Next Page</a> |
+		<a href="{% url directory.views.quicksearch search=search page=num_pages %}">Last Page</a>
+	{% endif %}
+</body>
+</html>

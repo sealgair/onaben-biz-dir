@@ -1,0 +1,171 @@
+img {
+	border: 0;
+}
+
+body {
+	background: white url(../img/ONABENSageBackground.jpg) repeat;
+	font-family: Verdana,Helvetica;
+	font-size: 10px;
+}
+
+#main {
+	width: 762px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 36px;
+	position: relative;
+	display: table;
+	top: 36px;
+	background-color: white;	
+	border: 2px solid black;
+	font-family: Verdana,Helvetica;
+	font-size: 10px;
+}
+
+#main a {
+	color: #363636;
+}
+
+#main td {	
+	vertical-align: top;
+}
+
+#header {
+	background-color: #f6f8eb;
+	border-bottom: 2px solid black;
+}
+#banner {
+	width: 100%;
+}
+#banner img {
+	max-height: 100px;
+	float: right;
+	padding-right: 50px;
+}
+
+#logo {
+	background: transparent url(../img/logo.gif) no-repeat;
+	width: 216px;
+	height: 83px;
+}
+
+#searchbar {
+	color: white;
+	background-color: black;
+	font-weight: bold;
+	text-align: right;
+	height: 40px;
+}
+#searchbar input {
+	color: black;
+	background-color: white;
+	text-align: left;
+	margin-top: 5px;
+}
+
+#left-menu {
+	background-color: #d9dcc2;
+	width: 100px;
+}
+#left-menu lh {
+	font-weight: bold;
+}
+#left-menu ol {
+	padding-left: 30px;
+	padding-bottom: 10px;
+}
+#left-menu li {
+	position: relative;
+	top: 10px;
+}
+#left-menu p {
+	padding-left: 30px;
+	padding-bottom: 10px;
+}
+#purchase {
+	font-size: 14px;
+	padding: 10px;
+}
+
+#purchase img {
+	padding: 10px;
+}
+
+#main-content {
+	padding-left: 40px;
+	margin: 5px;
+}
+
+#title {
+	font-size: 20px;
+	padding-top: 20px;
+}
+
+#biz-data {
+	font-size: 12px;
+	font-weight: bold;
+}
+#biz-data ul {
+	padding: 0;
+}
+#biz-data li {	
+	list-style-type: none;
+}
+
+#all a {
+	font-size: 14px;
+	float: left;
+	color: white;
+	margin-left: 20px;
+	margin-top: 5px;
+}
+
+#belt {
+	background: black url(../img/belt.gif) repeat-x;
+	height: 24px;
+}
+
+#footer {
+	width: 100%;
+	float: right;
+	text-align: right;
+	margin: 10px;
+}
+
+form#register ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	float: left;
+	clear: both;
+}
+form#register li {
+	float: left;
+	margin: 10px;
+}
+form#register label {
+	float: left;
+	font-weight: bold;
+}
+form#register input,
+form#register select,
+form#register textarea {
+	float: left;
+	clear:both;
+	width: 200px;
+}
+form#register textarea {
+	width: 400px;
+}
+
+form#register input.number {
+	width: 90px;
+}
+form#register input[type="checkbox"] {
+	clear: none;
+	width: auto;
+}
+form#register select#id_categories {
+	width: 400px;
+	height: 200px;
+}

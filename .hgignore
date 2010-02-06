@@ -1,0 +1,10 @@
+syntax: glob
+
+*.pyc
+*~
+settings_local.py
+time
+www/media/img/banners/*
+*.svn*
+.project
+.pydevproject

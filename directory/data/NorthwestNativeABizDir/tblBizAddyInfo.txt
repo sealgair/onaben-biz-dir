@@ -1,0 +1,306 @@
+1,"502 Cedar Dr","Santa Ana Pueblo","NM","87004",,"Mailing & Physical",0
+2,"PO Box 22452","Portland","OR","972692452",,"Mailing",0
+3,"454 Elm St","Phoenix","OR","97535",,"Mailing & Physical",0
+4,"Highway 97 & Buster Rd","Toppenish","WA","98948",,"Mailing & Physical",0
+5,"2904 SW Hailey Ave","Pendleton","OR","97801",,"Mailing & Physical",0
+6,"PO Box 20646","Keizer","OR","97307",,"Mailing",0
+7,"21923 SW 107th Ave","Tualatin","OR","97602",,"Mailing & Physical",0
+8,"3333 SE Belmont St","Portland","OR","97214",,"Mailing & Physical",0
+9,"707 125th Place NW","Marysville","WA","98271",,"Mailing & Physical",0
+10,"1839 Molalla Ave, Ste 7","Oregon City","OR","970454071",,"Mailing & Physical",0
+11,"PO Box 535","Warm Springs","OR","97761",,"Mailing",0
+12,"PO Box 22452","Portland","OR","972692452",,"Mailing",0
+16,"1375 NW Mall Street, Ste 3","Issaquah","WA","98027",,"Mailing",0
+15,"4512 SW Idaho Dr","Portland","OR","97221",,"Mailing",0
+19,"PO Box 460","Warm Springs","OR","97761",,"Mailing",0
+21,"PO Box 604","Maple Valley","WA","98038",,"Mailing",0
+22,"PO Box 1646","McMinnville","OR","97128",,"Mailing",0
+23,"2526 Grand Avenue","Billings","MT","59012",,"Mailing & Physical",0
+24,"131 S. Canyon Blvd","John Day","OR","97868",,"Mailing & Physical",0
+26,"3240 Walsey Lane, Suite #5","Warm Springs","OR","97761",,"Physical",0
+26,"PO Box 989","Warm Springs","OR","97761",,"Mailing",0
+27,"3634 Goldstone Ct. NE","Salem","OR","97305",,"Mailing & Physical",0
+29,"PO Box 586","Siletz","OR","97380",,"Mailing",0
+29,"2925 SE Ferry Slip Rd #228","Newport","OR","97365",,"Physical",0
+30,"72789 Hwy 331","Pendleton","OR","97801",,"Mailing",0
+32,"3926 NE 105th St","Seattle","WA","98125",,"Mailing",1
+33,"7961 S-450 Island Rd.","Warm Springs","OR","97761",,"Physical",0
+33,"PO Box 812","Warm Springs","OR","97761",,"Mailing",0
+35,"PO Box 820087","Portland","OR","97282",,"Mailing",0
+36,"PO Box 822","Silverton","OR","97381",,"Mailing",0
+37,"120 NE Canning Dr","Colville","WA","99114",,"Mailing & Physical",0
+38,"2612 Old Tulalip Rd","Marysville","WA","98271",,"Physical",0
+38,"8825 34th Ave NE #L164","Marysville","WA","98271",,"Mailing",0
+39,"PO Box 6267","Spokane","WA","992170905",,"Mailing",0
+40,"16280 State Hwy 305","Poulsbo","WA","98370",,"Mailing & Physical",0
+41,"3915 E Nebraska","Spokane","WA","99217",,"Physical",0
+42,"PO Box 906","Warm Springs","WA","97761",,"Mailing",0
+43,"36 West Q St","Springfield","OR","97477",,"Physical",0
+44,"PO Box 2040","Corvallis","OR","973392040",,"Mailing",0
+45,"PO Box 38","Clackamas","OR","97015",,"Mailing",0
+45,"13651 SE Ambler Rd","Clackamas","OR","97015",,"Physical",0
+46,"11385 SW Scholls Ferry Rd","Beaverton","OR","97008",,"Mailing & Physical",0
+47,"PO Box 976","Warm Springs","OR","97761",,"Mailing",0
+48,"1015 N. Yardley","Spokane","WA","99212",,"Physical",0
+49,"PO Box 2473","Clackamas","OR","97015",,"Mailing",0
+50,"6715 Ash Ave","Grand Ronde","OR","97347",,"Physical",0
+51,"6715 Ash Ave","Grand Ronde","OR","97347",,"Mailing",0
+52,"PO Box 599","Lapwai","ID","83540",,"Mailing",0
+53,"318 E. 4th St.","The Dalles","OR","97058",,"Physical",0
+54,"PO Box 422","White Swan","WA","98952",,"Mailing",0
+55,"1520 140th Ave NE, Ste 100","Bellevue","WA","98005",,"Mailing",0
+56,"4107 SE International Way, Ste 705","Milwaukie","OR","97222",,"Mailing",0
+57,"RRI, Box 1882","Delaware","OK","74027",,"Mailing",0
+58,"6302 St. Albion Way, Ste B103","Mountlake Terrace","WA","98043",,"Mailing",0
+59,"1819 East Springfield Ave","Spokane","WA","99202",,"Mailing",0
+60,"PO Box 205","Warm Springs","OR","97761",,"Mailing",0
+61,"PO Box 114","Grand Ronde","OR","97347",,"Mailing",0
+63,"PO Box 981","Scappoose","OR","97056",,"Mailing",0
+65,"17805 43rd Ave S","Seattle","WA","98188",,"Mailing & Physical",0
+66,"PO Box 908","Uncasville","CT","06382",,"Mailing",0
+67,"66 W Park","Butte","MT","59701",,"Physical",0
+68,"13428 45th Court W","Makilteo","WA","98275",,"Mailing & Physical",0
+62,"11528 SE Lincoln St.","Portland","OR","97216",,"Mailing",0
+69,"PO Box 636","Nespelem","WA","99155",,"Mailing",0
+69,"7 North Star Rd","Nespelem","WA","99155",,"Physical",0
+70,"Rural Route #2 Box 55M","Pocatello","ID","83202",,"Mailing",0
+71,"PO Box 487","Hoodsport","WA","98548",,"Mailing",0
+73,"327 SE 1st","Pendleton","OR","97801",,"Physical",0
+73,"PO Box 139","Pendleton","OR","97801",,"Mailing",0
+74,"6820 115th St NW","Tulalip","WA","98271",,"Mailing",0
+75,"8674 So. 4830 W","West Jordan","UT","84088",,"Mailing",0
+76,"302 S 1st St.","Okemah","OK","74859",,"Mailing",0
+77,"8499 Sidwalter Rd.","Warm Springs","OR","97761",,"Physical",0
+77,"PO Box 720","Warm Springs","OR","97761",,"Mailing",0
+78,"16200 SW Pacific Hwy, Suite H","Tigard","OR","97224",,"Mailing",0
+79,"229 So. 2nd St. #10","Springfield","OR","97477",,"Mailing",0
+80,"4134 N. Vancouver, Ste 303B","Portland","OR","97217",,"Mailing",0
+81,"1111 Main St, Ste 115","Vancouver","WA","98660",,"Mailing",0
+82,"PO Box 1860","Pendleton","OR","97801",,"Mailing",0
+83,"PO Box 938, So. Toppenish Ave","Toppenish","WA","98948",,"Mailing",0
+84,"5936 Lilac Lane","Springfield","OR","97478",,"Mailing",0
+85,"3747 N. Mississippi Ave","Portland","OR","97227",,"Mailing & Physical",0
+86,"9770 SW Ventura Ct.","Tigard","OR","97223",,"Mailing",0
+87,"15816 Yelm Terra Way SE","Yelm","WA","98597",,"Mailing",0
+88,"PO Box 7","Blackfoot","ID","83221",,"Mailing",0
+89,"230 SE 52nd Avenue","Portland","OR","97215",,"Physical",0
+89,"PO Box 69622","Portland","OR","97239",,"Mailing",0
+90,"9615 Grand Ronde Road","Grand Ronde","OR","97347",,"Mailing & Physical",0
+91,"810 SW Court Ave","Pendleton","OR","97801",,"Mailing",0
+92,"854 NE 10th St","Grants Pass","OR","97526",,"Mailing",0
+93,"PO Box 670","Warm Springs","OR","97761",,"Mailing",0
+94,"1133 W. Columbia Dr.","Kennewick","WA","99336",,"Mailing",0
+95,"1201 W. Columbia Dr","Kennewick","WA","99336",,"Mailing",0
+96,"408 SW Goodwin Ave","Pendleton","OR","97801",,"Mailing",0
+97,"9430 NE Prescott","Portland","OR","97220",,"Mailing",0
+99,"1083 W. Irvine","The Dalles","OR","97058",,"Mailing",0
+100,"4155 NE Three Mile Lane, #33","McMinnvile","OR","97128",,"Mailing",0
+101,"3201 Tremont Avenue","North Bend","OR","97459",,"Mailing",0
+102,"5100 SW Macadam Ave, Ste 300","Portland","OR","97239",,"Mailing",0
+103,"726 Royal Ave #21","Medford","OR","97504",,"Mailing",0
+104,"4107 SE International Way, Ste 705","Milwaukie","OR","97222",,"Mailing",0
+105,"4548 N. Albina Ave","Portland","OR","97217",,"Mailing",0
+107,"999 18th St, Ste 2460","Denver","CO","80202",,"Mailing",0
+108,"RR2 Box 77E","Pocatello","ID","83202",,"Mailing",0
+109,"3338 SE 17th Ave","Portland","OR","97202",,"Mailing",0
+110,"702 West 9th St.","Wapato","WA","98903",,"Mailing",0
+111,"87193 McTimmons Lane","Bandon","OR","97411",,"Mailing",0
+112,"551 S. 4th St.","Springfield","OR","97477",,"Mailing",0
+113,"PO Box 2198","Beaverton","OR","97075",,"Mailing",0
+114,"PO Box 1907","Kalama","WA","98625",,"Mailing",0
+115,"454 Elm Street","Phoenix","OR","97535",,"Mailing",0
+116,"PO Box 429","Warm Springs","OR","97761",,"Mailing",0
+116,"1233 Veteran's Way","Warm Springs","OR","97761",,"Physical",0
+117,"2042 NE Airport Rd","Roseburg","OR","97470",,"Mailing",0
+118,"520 SE Spruce St","Roseburg","OR","97470",,"Mailing",0
+119,"255 Depot Street","Fairview","OR","97024",,"Mailing",0
+120,"9615 Grand Ronde Rd","Grand Ronde","OR","97347",,"Mailing",0
+121,"47559 Short Mile Rd","Pendleton","OR","97801",,"Mailing",0
+122,"PO Box 741","Cass Lake","MN","56633",,"Mailing",0
+123,"4223 W. Emerald St","Boise","ID","83706",,"Mailing",0
+124,"120 State Ave NE #1455","Olympia","WA","98501",,"Mailing",0
+125,"327 SE 1st","Pendleton","OR","97801",,"Physical",0
+125,"PO Box 139","Pendleton","OR","97801",,"Mailing",0
+126,"3323 Pacific Avenue","Tacoma","WA","98418",,"Mailing",0
+127,"4041 B St","Anchorage","AK","99503",,"Mailing",0
+127,"8320 154th Ave NE","Redmond","WA","98052",,"Mailing",0
+128,"PO Box 545","Suquamish","WA","98392",,"Mailing",0
+129,"2500 N. Williams Ave #404","Portland","OR","97227",,"Mailing",0
+130,"855 SW Yates Dr, Ste 201","Bend","OR","97702",,"Mailing",0
+131,"PO Box 652","Oakville","WA","985680652",,"Mailing",0
+132,"PO Box 222","Warm Springs","OR","97761",,"Mailing",0
+133,"PO Box 3521","Coos Bay","OR","97420",,"Mailing",0
+145,"915 Sommerville Loop","Harrisburg","OR","97446",,"Mailing",0
+146,"PO Box 554","Myrtle Point","OR","97458",,"Mailing",0
+147,"7216 N. Van Houten Ave","Portland","OR","97203",,"Mailing",0
+148,"11144 SE 30th Ave","Milwaukie","OR","97222",,"Mailing",0
+149,"18305 SW Augusta Lane","Beaverton","OR","97006",,"Mailing",0
+150,"206 Oak St","Silverton","OR","97381",,"Mailing",0
+151,"421 SW 6th Ave, Ste 1210","Portland","OR","97204",,"Mailing",0
+152,"PO Box 130","White Swan","WA","98952",,"Mailing",0
+153,"351 S. Main St.","Pendleton","OR","97801",,"Mailing & Physical",0
+156,"18230 Frost Rd.  ","Dallas","OR","97338",,"Mailing",0
+157,"PO Box 99","Maupin","OR","97037",,"Mailing",0
+158,"732 Shelley St","Springfield ","OR","97477",,"Mailing",0
+159,"1721 Fescue Street SE","Albany","OR","97322",,"Mailing",0
+160,"PO Box 749","Warm Springs","OR","97761",,"Mailing",0
+161,"11076 Hwy 200","Dixon","MT","59831",,"Mailing",0
+162,"170 North Adams St","Coquille","OR","97423",,"Mailing",0
+164,"PO Box 2027","Omak","WA","98841",,"Mailing",0
+167,"7737 SW Cirrus Dr","Beaverton","OR","970085967",,"Mailing",0
+168,"PO Box 666","Bothell","WA","98041",,"Mailing",0
+169,"565 Rio Vista Drive","Fallon","NV","89406",,"Mailing",0
+170,"615 East Williams Avenue","Fallon","NV","89406",,"Mailing",0
+171,"1205 Klamath Ave","Klamath Falls","OR","97601",,"Mailing",0
+172,"PO Box 1218","Brookings","OR","97415",,"Mailing",0
+173,"7305 43rd Ave NE","Marysville","WA","98270",,"Mailing",0
+174,"8920 84th St NE","Arlington","WA","98223",,"Mailing",0
+175,"1225 Avenue ""C""","White City","OR","97503",,"Mailing",0
+176,"39130 Dubarko Rd","Sandy","OR","97055",,"Mailing",0
+177,"1625 SW Morrison","Portland","OR","97205",,"Mailing",0
+178,"5105 E. Railroad","Spokane","WA","99212",,"Mailing",0
+179,"1033 Old Blyn Hwy","Sequim","WA","98382",,"Mailing",0
+180,"2780 SE Harrison St, Ste. 104","Milwaukie","OR","97222",,"Mailing",0
+181,"PO Box 1189","Warm Springs","OR","97761",,"Mailing",0
+182,"2611 S Hargreaves Ct","Spokane","WA","99223",,"Mailing",0
+183,"48705 Wilson River Hwy","Tillamook","OR","97141",,"Mailing",0
+184,"4324 Fern Valley Rd","Medford","OR","97504",,"Mailing",0
+186,"2639 B St","Washougal","WA","98671",,"Mailing",0
+187,"1601 Arapahoe St., Ste 400","Denver","CO","80202",,"Mailing",0
+188,"56533 Highway 93 South","Polson","MT","59860",,"Mailing",0
+189,"PO Box 3652","Omak","WA","98841",,"Mailing",0
+190,"271 River Pine Drive","Shawano","WI","54166",,"Mailing",0
+191,"1033 Old Blyn Hwy","Sequim","WA","98382",,"Mailing",0
+192,"8535 SE Powell Blvd","Portland","OR","97266",,"Mailing",0
+193,"PO Box 832","Warm Springs","OR","97761",,"Mailing",0
+197," PO Box 27626","Tucson","AZ","857267626",,"Mailing",0
+200,"PO Box 82068","Portland","Or","972820068",,"Mailing",0
+201,"1330 Craig-Klawock Highway","Craig","AK","99921",,"Mailing",0
+202,"550 Martin Rd","Toppenish","WA","98948",,"Mailing",0
+203,"2203 36th Street","Bellingham","WA","98229",,"Mailing",0
+204,"5100 Montour Road","Emmett","ID","83617",,"Mailing",0
+205,"5336 Sam Creek Rd","Toledo","OR","97391",,"Mailing",0
+208,"PO Box 250","Polson","MT","59860",,"Mailing",0
+209,"PO Box 0129","Forest Grove","OR","97116",,"Mailing",0
+210,"1025 Fir Ave","Reedsport","OR","97467",,"Mailing",0
+211,"5424 SW Red Leaf St","Lake Oswego","OR","97035",,"Mailing",0
+212,"117 South Scammell","Aberdeen","WA","98520",,"Mailing",0
+213,"PO Box 423","Warm Springs","OR","97761",,"Mailing",0
+214,"11300 SW Cahalin ","Sherwood","OR","97140",,"Mailing",0
+215,"7030 SW 99th Place","Beaverton","OR","97008",,"Mailing",0
+216,"303 US Hwy 93 East","Polson ","MT","59860",,"Mailing",0
+219,"PO Box 850","Carlsborg","WA","98324",,"Mailing",0
+220,"3562 Wapato Rd","Wapato","WA",,,"Mailing & Physical",0
+221,"PO Box 162","Warm Springs","OR",,,"Mailing",0
+222,"1904 Third Ave Ste 711","Seattle","WA","98101",,"Mailing",0
+223,"PO Box 1166","Tualatin","OR",,,"Mailing",0
+224,"10518 SE St Francis St","Portland","OR","97266",,"Mailing",0
+225,"Highway 97 & Buster Road","Toppenish","WA",,,"Physical",0
+226,"Highway 97 & Buster Road","Toppenish","WA",,,"Physical",0
+227,"PO Box 303","Coquille","OR","97423",,"Mailing",0
+228,"PO Box 13260","Olympia","WA",,,"Mailing",0
+229,"2198 Hwy 26//PO Box 420","Warm Springs","OR",,,"Mailing & Physical",0
+230,"2233 Williamette St, Ste B","Eugene","OR","97402",,"Mailing",0
+231,"2924 Haxton Way","Bellingham","WA","98226",,"Mailing",0
+232,"PO Box 817","Concrete","WA","98237",,"Mailing",0
+233,"PO Box 12593","Portland","OR","97212",,"Mailing",0
+234,"5422 74th St. W","Lakewood","WA","98499",,"Mailing",0
+235,"Highway 97 & Buster Road","Toppenish","WA",,,"Physical",0
+236,"PO Box 635","Ilwaco","WA",,,"Mailing",0
+237,"PO Box 638","Pendleton","OR",,,"Mailing",0
+238,"1229 N Monroe St","Spokane","WA","99201",,"Mailing",0
+239,"51356 Hwy 93","Pablo","MT","59855",,"Mailing",0
+240,"113 E Columbia Dr","Kennewick","WA","99336",,"Mailing",0
+241,"143 Hart St","Molalla","OR","97038",,"Mailing",0
+242,"W. 61 Highway 108","Shelton","WA","98584",,"Mailing",0
+243,"2877 Lummi Shore Rd","Bellingham","WA","98226",,"Mailing",0
+244,"2926 SE 136th","Portland","OR","97236",,"Mailing",0
+245,"PO Box 3618","Sunriver","OR","97707",,"Mailing & Physical",0
+246,"1517 N Coast","Newport","OR","97365",,"Mailing",0
+247,"46641 Popcorn Lane","Pilot Rock ","OR",,,"Mailing & Physical",0
+248,"PO Box 1245","Hoopa","CA","95546",,"Mailing",0
+249,"PO Box 462","Albany","OR","97321",,"Mailing",0
+250,"6700 SW 105th Ave, Suite #220D","Beaverton ","OR",,,"Mailing & Physical",0
+251,"PO Box 1619","Madras","OR","97741",,"Mailing",0
+252,"PO Box 1437","Auburn","WA","98701",,"Mailing",0
+253,"PO Box 1058","South Bend","WA","98586",,"Mailing",0
+254,"2334 Scholfield Ridge Rd","Reedsport","OR","97467",,"Mailing",0
+255,"117 So. 108th Street","Seattle","WA","98168",,"Mailing",0
+257,"PO Box 929","Warm Springs",,,,"Mailing",0
+258,"143 Hart St","Molalla","OR","97038",,"Mailing",0
+259,"PO Box 99","Willamina","OR","97396",,"Mailing",0
+260,"5695 SE International Way, Ste D","Milwaukie","OR",,,"Mailing & Physical",0
+261,"1075 SE Baseline","Hillsboro","OR","97123",,"Mailing",0
+262,"1144 Bilger Creek","Myrtle Creek","OR","97457",,"Mailing",0
+263,"PO Box 458","White Swan","WA","98952",,"Mailing",0
+264,"54005 SW Hebo Rd","Grand Ronde","OR","97347",,"Mailing",0
+265,"N. 19390 US Hwy 101","Skokomish","WA","98584",,"Mailing",0
+266,"1144 Warm Springs St., P O Box 1419","Warm Springs","OR",,,"Mailing & Physical",0
+267,"PO Box 810","Warm Springs","OR",,,"Mailing",0
+268,"PO Box 490","Warm Springs","OR","97761",,"Mailing",0
+270,"PO Box 112","Deadwood","OR","97430",,"Mailing",0
+271,"Highway 97 & Buster Road","Toppenish","WA",,,"Physical",0
+272,"115 Alpine Dr","Roseburg","OR","97470",,"Mailing",0
+275,"Highway 97 & Buster Road","Toppenish","WA",,,"Mailing",0
+277,"229 10th St","Nespelem","WA","99155",,"Physical",0
+277,"PO Box 450","Nespelem","WA","99155",,"Mailing",0
+278,"PO Box 450","Nespelem","WA","99155",,"Mailing",0
+278,"229 10th St.","Nespelem","WA","99155",,"Physical",0
+279,"1000 Sixth Ave. W","Bandon","OR","97411",,"Mailing & Physical",0
+280,"34333 Highway 97 North","Chiloquin","OR","97624",,"Physical",0
+281,"141 Lancaster Dr. NE","Salem","OR","97301",,"Mailing & Physical",0
+282,"E. 92 Chapman Rd.","Shelton","WA","98584",,"E. 92 Chapman Rd.",0
+284,"1000 Sixth Ave. W","Bandon","OR","97411",,"Mailing & Physical",0
+285,"73239 Confederated Way ","Pendleton","OR","97801",,"Physical",0
+286,"3050 Pyle Mountain Place","McAlester","OK","74501",,"3050 Pyle Mtn Place",0
+288,"1206 Main St East","Monmouth","OR","97361",,"Mailing",0
+293,"PO Box 355","Warm Springs","OR","97761",,"Mailing",0
+295,"8225 SE 7th","Portland","OR","97202",,"Mailing",0
+249,"","",,,,"Physical",0
+259,"23340 SW Willamina Creek Rd","Willamina","OR","97396",,"Physical",0
+232,"46346 SR 20","Concrete","WA","98237",,"Physical",0
+299,"25 N 1st St, Ste 2","Creswell","OR","97426",,"Physical",0
+299,"PO Box 425","Creswell","OR","97426",,"Mailing",0
+300,"2286 Oroville Chico Hwy","Durham","CA","95938",,"Physical",0
+300,"PO Box 6254","Chico","CA","95927",,"Mailing",0
+301,"559 NW Highway 101","Lincoln City","OR","97801",,"Mailing",0
+302,"1777 NW 44th St","Lincoln City","OR","97367",,"Mailing & Physical",0
+303,"3245 NE 50th Street","Lincoln City","OR","97367",,"Mailing & Physical",0
+304,"1501 40th Place","Lincoln City","OR","97367",,"Mailing & Physical",0
+305,"4800 NE Logan Rd","Lincoln City","OR","97367",,"Mailing & Physical",0
+306,"4751 Astoria St, NE","Salem","OR","97305",,"Mailing & Physical",0
+307,"315 S. Gaither St.","Siletz","OR","97380",,"Mailing & Physical",0
+308,"2120 NW 44th St, Ste D","Lincoln City","OR","07367",,"Mailing",0
+309,"PO Box 549","Siletz","OR","97380",,"Mailing",0
+310,"3400 State St SE Ste G710","Salem","OR","97301",,"Mailing & Physical",0
+281,"1333 NW Hwy 101","Lincoln City","OR","973673341",,"Mailing & Physical",0
+280,"PO Box 458","Klamath Falls","OR","97601",,"Mailing & Physical",0
+311,"17544 Pioneer Parkway","LaConner","WA","98257",,"Mailing & Physical",0
+312,"1700 Mt. Hood Avenue #122","Woodburn","OR","97071",,"Mailing",0
+313,"PO Box 910","LaConner","WA","98257",,"Mailing",0
+314,"72777 Highway 331","Pendleton","OR","978013379",,"Mailing & Physical",0
+316,"PO Box 1440","Omak","WA","98841",,"Mailing",0
+317,"1127 S. Broadway","Coos Bay","OR","97420",,"Mailing & Physical",0
+318,"PO Box 178","Carlsborg","WA","98324",,"Mailing",0
+320,"1105 36th Street N.","Lewiston","ID","83501",,"Mailing & Physical",0
+321,"PO Box 952","Ashland","OR","97520",,"Mailing",0
+322,"PO Box 82812","Portland","OR","97282",,"Mailing",0
+323,"PO Box 82812","Portland","OR","97282",,"Mailing",0
+324,"1390 Broadway, Suite B, #137","Placerville","CA","95667",,"Mailing & Physical",0
+325,"421 S Main Street","Pendleton","OR","97801",,"Mailing & Physical",0
+326,"1119 Circle Wood Court","Central Point","OR","97502",,"Mailing",0
+327,"51761 Hillside Road","Charlo","MT","59824",,"Mailing & Physical",0
+328,"120 E. Birch","Walla Walla","WA","99362",,"Mailing",0
+329,"PO Box 1973","Pendleton","OR","97801",,"Mailing",0
+330,"11575 SW Pacific Highway, #243","Tigard","OR","97223",,"Mailing & Physical",0
+331,"3098 Smokehouse Road","Bellingham","WA","98226",,"Physical",0
+331,"PO Box 28113","Bellingham","WA","98228",,"Mailing",0
+332,"PO Box 1973","Pendleton","OK","97801",,"Mailing",0
+333,"559 NW Highway 101","Lincoln City","OR","97367",,"Physical",0
+333,"PO Box 417","Neotsu","OR","97364",,"Mailing",0
+334,"28806 Thorn Street","Sweetwater","OR","83540",,"Mailing & Physical",0
+335,"945 NW 101","Lincoln City","OR","97367",,"Mailing & Physical",0
+248,"#1 Legion Way","Hoopa","CA","95546",,"Mailing & Physical",0
+245,"56845 Venture Ln","Sunriver","OR","97707",,"Mailing & Physical",0
+153,"71648 Charolais","Pendleton","OR","97801",,"Mailing & Physical",0
+339,"P.O. Box 31257","Meza","AZ","852751257",,"Mailing & Physical",0

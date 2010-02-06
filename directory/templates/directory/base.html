@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<title>{% block title %}ONABEN- A Native American Business Network{% endblock %}</title>
+	<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+	<META HTTP-EQUIV="EXPIRES" CONTENT="0">
+	<META NAME="RESOURCE-TYPE" CONTENT="DOCUMENT">
+	<META NAME="DISTRIBUTION" CONTENT="GLOBAL">
+	<META NAME="AUTHOR" CONTENT="ONABEN- A Native American Business Network">
+	<META NAME="COPYRIGHT" CONTENT="Copyright (c) by ONABEN- A Native American Business Network">
+	<META NAME="DESCRIPTION" CONTENT="A Native American Business Network">
+	<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+	<META NAME="REVISIT-AFTER" CONTENT="1 DAYS">
+	<META NAME="RATING" CONTENT="GENERAL">
+	
+	<LINK REL="StyleSheet" HREF="/static/css/main.css" TYPE="text/css">
+</head>
+
+<body>
+<table id="main" cellpadding="4px" cellspacing="0">
+<tr id="header">
+	<td>
+	{% block header %}
+		<a href="{% url splash %}"><img src="/static/img/logo.gif"/></a>
+	{% endblock %}
+	</td>
+	<td id="banner">
+	{% block banner %}
+	{% include 'bannerad/banner.html' %}
+	{% endblock %}
+	</td>
+</tr>
+<tr id="searchbar">
+	<td colspan="2">
+		<span id="all">
+			<a href="{% url list show_by='business' %}">All Businesses</a>
+			<a href="{% url list show_by='category' %}">All Categories</a>
+		</span>
+		{% block search %}
+		<form action="{% url list show_by=show_by %}" method="post">
+			<input type="text" name="search" id="search" value="{{ search }}"/>
+			<input type="submit" value="search {{ show_by_pl }}"/>
+		</form>
+		{% endblock %}
+	</td>
+</tr>
+<tr>
+	<td id="belt" colspan="2"/>	
+</tr>
+<tr>
+	<td id="left-menu">
+		{% block leftmenu %}
+		<ol> <lh>Popular Categories<br/></lh>
+		{% for cat in popcats %}
+			<li><a href="{% url one show_by='category' name=cat.name_url %}">{{ cat }}<br/>({{ cat.biz_num }} businesses)</a></li>
+		{% endfor %}
+		</ol>
+		<p>Market your Native-owned business or Tribal enterprise for FREE with the ONABEN NW Native American Business Directory.</p>
+		<p>To be listed in our online Business Directory, please complete <a href="{% url register %}">this form</a>.</p>
+		{% endblock %}
+	</td>
+	<td id="main-content">
+	<h3 id="title">2007-2009 Northwest Native American Business Directory</h3>
+	
+	{% block content %}
+	{% endblock %}
+	
+	<br/>
+	{% block pagination %}{% endblock %}
+	<br/>
+	
+	{% block footer %}
+	<div id="footer">
+	Copyright &copy; by ONABEN - A Native American Business Network<br/>
+	All Right Reserved.<br/>
+	<a href="http://onaben.org/modules.php?name=Content&pa=showpage&pid=8">Contact Us</a>
+	</div>
+	{% endblock %}
+	</td>
+</tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+{% extends "directory/base.html" %}
+{% block title %}{{ biz.name }}{% endblock %}
+{% block purchaseinfo %} {% endblock %}
+
+{% block header %}
+	{{ block.super }}
+{% endblock %}
+
+{% block content %}
+	<div id="biz-data">
+	<h1>
+		{% if biz.website %}
+		<a href="http://{{ biz.website }}" target="_blank">{{ biz.name }}</a>
+		{% else %}
+		{{ biz.name }}
+		{% endif %}
+	</h1>
+	
+	{% if biz.owner_set.all %}
+	<ul>
+	<lh>Owned By:</lh>
+	{% for owner in biz.owner_set.all %}
+		<li> {{ owner.first_name }} {{ owner.last_name }} </li>
+	{% endfor %}
+	</ul>
+	{% endif %}
+	
+	<ul>
+	{% if biz.phonenumber_set.all %}
+	<lh>Phone Number s :</lh>
+	{% for phone in biz.phonenumber_set.all %}
+		<li> {{ phone.phone_type }}: {{ phone.phone_number }}
+		{% if phone.extension %}
+		ext {{ phone.extension }}
+		{% endif %}
+		</li>
+	{% endfor %}
+	</ul>
+	{% endif %}
+	
+	{% if biz.email %}
+	<p>Email: {{ biz.safe_email }}</p>
+	{% endif %}
+	
+	{% if biz.website %}
+	<p>Website: <a href="http://{{ biz.website }}" target="_blank">{{ biz.website }}</a></p>	
+	{% endif %}
+	
+	</div>
+	
+	<p>{{ biz.description }}</p>
+	
+	{% for addy in biz.address_set.all %}
+	{% if not biz.do_not_publish_addy %}
+	<p>
+		{{ addy.addy_type }} Address:<br/>
+		{{ addy.street }}<br/>
+		{{ addy.city }}, {{ addy.state }}<br/>
+		{{ addy.zipcode }}<br/>
+	</p>
+	{% endif %}
+	{% endfor %}
+	{% for phone in biz.bizphonenumber_set.all %}
+	{{ phone.phone_type }}: {{ phone.phone_number }}
+	{% if phone.extension %} {{ phone.extension }} {% endif %}
+	{% endfor %}
+	
+	<ul> <lh>Categories	</lh>
+	{% for cat in biz.category_set.all %}
+		<li><a href="{% url one show_by='category' name=cat.name_url %}">{{ cat }}</a></li>
+	{% empty %}
+		<li> None </li>
+	{% endfor %}
+	</ul>
+{% endblock %}

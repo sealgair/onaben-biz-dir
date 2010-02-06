@@ -1,0 +1,14 @@
+directory_business: null, name, null, null, null, nw_region, null, website, email, description, start_date, end_date, home_based, full_time_employees, part_time_employees, woman, minority, sic_or_cert_type, email_list, mailing_list, contact_for_marketing, referred_by, still_operating, will_publish, will_advertise, date_registered, last_updated, ready_to_print, publish_online, other_notes
+
+directory_address: business_id, street, city, state, zipcode, country_outside_us, addy_type, do_not_publish_addy
+    
+directory_category: null, category
+directory_category_business: business_id, category_id
+
+directory_owner: null, tribe, first_name, last_name, title, onaben_client
+directory_owner_business: null, business_id, owner_id, null, null, null, null
+
+directory_phonenumber: business_id, phone_type, phone_number, extension
+
+
+

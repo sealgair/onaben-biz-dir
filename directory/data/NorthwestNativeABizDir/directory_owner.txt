@@ -1,0 +1,327 @@
+1,0,"Clifford","Rocheleau","Mr.",0
+2,0,"Terry (Tuka)","Hartman","PhDc",1
+3,0,"Evelyn","Hartman","PhD",0
+4,0,"Jesse","Bianchi",,0
+5,0,"Damion","Bianchi",,0
+6,0,"Si","Bianchi",,0
+7,0,"Jon","Bianchi",,0
+8,1,,,,0
+9,0,"Dale","Jenner",,1
+10,0,"Trista","Ross",,0
+11,0,"Marc","Anderson","PE",0
+12,0,"Melaina","Catabay",,1
+13,0,"Kathleen","Rose",,1
+14,0,"Steven ""Andy""","Reece",,0
+15,0,"Nina","Reece",,0
+16,1,,,,0
+17,1,,,,0
+19,0,"Jeremy","Cearley",,1
+20,0,"Pinky","Beymer",,1
+21,0,"Mike","Dashner",,0
+22,0,"Edward","Mecum",,0
+23,1,,,,1
+24,0,"Lynn ""Bear""","Robertson",,1
+25,0,"Christopher","Chernoff",,0
+26,0,"Jennifer","Orlowski-Robertson",,1
+27,0,"Darryl","Olson",,0
+28,0,"Lynn","Sampson",,1
+29,0,"Brigette","Whipple",,1
+30,0,"Shelley","Hanson",,1
+31,0,"Lisa","Brown",,1
+32,1,,,,0
+33,0,"Sandra","Osawa",,0
+34,0,"Birdsong","Simtustus",,0
+35,0,"Debi","Bernardo",,1
+36,0,"Cynthia","King",,1
+37,0,"Don","Lynds",,0
+38,0,"Connie","Lynds",,0
+39,0,"Glen","Gobin",,0
+40,0,"Diana","White",,0
+41,0,"Lyle","Emerson",,0
+42,0,"Sue","George",,0
+43,0,"Jerry","Burton",,0
+44,0,"Margie","Wilson",,0
+45,0,"Linda","Hammerquist",,0
+47,0,"Patricia J.","Given",,0
+48,0,"Tamera J.","Yocom",,0
+49,0,"Ted L.","Forcum","Dr",1
+50,0,"Al","Bagley",,1
+51,0,"Richard W.","Curtiss",,1
+52,0,"John F.","Wark",,1
+53,0,"Shelly J.","Radmer",,0
+54,0,"Joanne","Begay-Beeks",,1
+55,0,"Brian","McCormack",,1
+56,0,"Chuck","Williams",,1
+57,0,"Delbert","Wheeler",,0
+58,0,"Stuart","Fricke",,0
+59,0,"Janie","Millican",,1
+60,0,"Georgia","O'Mary",,1
+61,0,"Susan Thomas","Underwood",,1
+62,0,"Gil","Honanie",,1
+63,0,"William","Womer",,1
+64,0,"Rick","Matthews",,1
+65,0,"Edna M.","Gonzales",,1
+66,0,"Dakota","Whitecloud",,0
+67,0,"Lillian","Pitt",,0
+68,0,"Pat Courtney","Gold",,1
+69,0,,,,0
+70,0,"ShadowHawk",,,0
+71,0,"Natansee","Lewis",,1
+72,0,"Bethany","Seidel",,0
+73,0,"Jeanette","Ziegler",,0
+74,0,"Robert","Bigback",,1
+75,0,"Michele","Dennis-Bigback",,1
+76,0,"Robert","Darrow",,1
+77,0,"Georgia L.","Tongel",,1
+78,0,"El Terese","Broncho",,1
+79,0,"Pete","Peterson",,0
+80,0,"Marilee","Peterson",,0
+82,0,"Penny","White",,1
+83,0,"Brandy","White",,1
+84,0,"Deborah E.","Brown",,0
+85,0,"Arlene","Salt",,0
+86,0,"Glendora L.","Osborn",,1
+87,0,"Lynn","Fluhr",,0
+88,0,"Travis","Bauer",,0
+89,0,"Sky","Faulkner",,0
+90,0,"Charlie","Clark",,1
+91,0,,,,0
+92,0,"Mario","Peralta",,0
+93,0,"Tina","Peralta",,0
+94,0,"Kathy","Frazier",,1
+95,0,"Fred A.","Hill, Sr.",,0
+96,0,"Rose","Sampson",,1
+97,0,"Kristy","Holden",,0
+98,0,"Kelly","Brundage",,0
+99,0,"Linn","Goldsby",,0
+100,0,"Marcie","Goldsby",,0
+101,0,"Celeste","Whitewolf",,1
+102,0,"Jane M.","Wood",,0
+103,0,"Wes","Jones",,0
+104,0,"L","Kirk",,0
+105,1,,,,0
+106,0,"Wanda","Alanis",,0
+107,0,"Mary","Sando-Emhoolah",,1
+108,0,"Michael P.","Emhoolah",,1
+110,0,"Clay","Martin",,0
+111,0,"Bruce","Ratchford",,0
+112,0,"Margaret E.","Sams",,1
+113,0,"Ed","Edmo",,1
+114,0,"Eric Lee","DelRose",,1
+115,0,"Shannon Carolee","Garza",,1
+116,1,,,,0
+117,0,,,,0
+118,0,"NICWA",,,0
+119,0,"Dawna Lee","LaLonde",,0
+120,0,"John F.","Witty",,1
+121,0,"24 Multi-Tribes & Tribal & Alaska Native Corps",,,1
+122,0,"Tony A.","Shay",,0
+123,0,"Adrian","Larvie",,1
+124,0,"Delores","George",,0
+125,0,"Linda L.","Mecum",,1
+126,0,"Az","Carmen",,1
+127,0,"Becky","Jarvis",,0
+128,0,"Bill","Nahalea",,0
+129,0,"Gloria","Nahalea",,0
+130,0,"Eleanor Lefthand","Bianchi",,0
+131,1,,,,0
+132,0,"Rhonda","Herschell",,0
+133,0,"Dana","Bumgarner",,1
+134,0,"Brian ""Mike""","Myers",,0
+135,0,"Linda S.","Bird",,1
+136,0,"Lois","Thadei",,0
+137,0,"Frank","Bean, Sr.","President",0
+138,0,"Lyle S.","Conway","Vice President",0
+139,1,,,,0
+140,0,"Douglas","Hagen",,0
+141,0,"Phyllis","Hagen",,0
+142,0,"Johnny","Johnson",,1
+143,0,"Dianne","Devlin",,0
+144,0,"David","DuPuis",,0
+145,0,"James","Greeley",,0
+146,0,"Alison","LaFriener",,0
+147,0,"Tom","LaFriener",,0
+153,0,"Tina Louise","Barnett",,0
+154,0,"Deanna","Wohlgemuth",,0
+155,0,"Mary Rose","Bennetts",,1
+156,0,"Verdene M.","McGuire",,1
+157,0,"Fred","Cooper",,1
+158,0,"Veronica D.","Wesley",,0
+159,0,"Valerie","Guzman",,1
+160,0,"Colleen L.","Leskinen",,1
+161,1,,,,0
+162,1,,,,0
+163,0,"B. Kaliko","Yokoyama",,1
+164,0,"Selena","Yokoyama",,1
+165,0,"BP ""Mickey""","Brunoe, Sr.",,0
+166,0,"Gloria Tons","Gard",,0
+167,0,"Gary","Means",,0
+168,0,"Janet","Burtch",,0
+170,0,"Debra Nystrom","Pollard",,0
+171,0,"Bill","Moomaw",,0
+172,0,"Shyla","Moomaw",,0
+173,0,"Warren","Brainard",,0
+174,0,"Tim","Douglass",,0
+175,1,,,,0
+176,1,,,,0
+177,0,"Anita","Neiffer",,0
+178,0,"Bill","Murphy",,0
+179,0,"WSCAT",,,0
+180,0,"Kathryn J.","Burke",,1
+181,0,"Thomas E.","Younker",,0
+182,0,"Martin","Tull",,0
+183,0,"Kathy","Lisac",,0
+184,0,"Lisa","Hermann",,0
+185,0,"Craig","Kelson",,0
+186,1,,,,0
+187,0,"Roxanne","McInturff",,0
+188,0,"Jim","Hartzog",,0
+189,0,"Robert","Macy",,0
+190,0,"Rosa","Macy",,0
+191,1,,,,0
+192,1,,,,0
+193,1,,,,0
+194,0,"Donald R.","Dexter, Jr.","DMD",0
+196,0,"Owen","Day",,0
+197,0,"Steven","Noll",,0
+198,0,"Kathleen","Steele",,1
+200,0,"Donna","Sprouse",,0
+201,0,"Nancy","Stewart",,0
+202,0,"Dean","Williams",,0
+203,0,"Scherri","Williams",,0
+204,0,"Myrtle","Moon",,0
+205,0,"Steve","Bobb",,0
+206,0,"Ted","McDonald",,0
+207,0,"Kip","Ramsey",,0
+208,0,"Tom","Linton",,0
+209,0,"Debra","Linton",,0
+210,0,"Patricia","Treadwell",,0
+211,0,"Bill","Bolima",,0
+212,0,"Jackie","Wilson",,0
+213,0,"Maurice A.","Olney, Sr.",,0
+214,0,"Augustan","Kittson",,0
+215,0,"Lu","Root",,0
+216,0,"Colleen","Dietl",,0
+217,0,"Dave","Thayer",,0
+218,0,"Robert","Huckaby",,0
+219,0,"Alvin T.","James",,1
+220,0,"Cindy","James",,1
+221,0,"Tommie","Smith",,0
+223,0,"Jo","Smith",,0
+224,0,"Victor","Tallon",,0
+225,0,"JoAnn","Comeaux",,0
+226,0,"Renae","Brown",,1
+227,0,"Brent","Graybael, Sr.",,0
+228,0,"Vernon","Lane",,0
+229,0,"Nancy","Lane",,0
+230,0,"James","Halliday",,0
+231,0,"Raymond Aaron","Brown",,0
+232,1,"The Affiliated Tribes of NW Indians",,,0
+233,0,"Richard","Kreis",,0
+234,1,,,,0
+235,0,"The Affiliated Tribes of NW Indians",,,0
+236,0,"Christine","Clary",,0
+237,0,"Ted","Freeman",,0
+238,0,"Shirley","Branson",,0
+239,0,"Ken","Smith",,0
+240,0,"Robert","Erb",,0
+241,0,"Michael","Cates",,0
+242,0,"Donald A.","Barlow","Dr.",0
+243,0,"Judy","Costello",,0
+244,0,"Kelly","Costello",,0
+245,0,"Jerome N.","Cordeiro",,0
+246,0,"Larry","Evey",,0
+247,0,"Robert","Earle",,0
+248,0,"LeRoy","Smith",,0
+249,0,"Chris","Smith",,0
+250,0,"Caroll","Loomis",,1
+251,0,"Harvi","Hood",,0
+252,0,"Connie","Hood",,0
+253,0,"Ann","Plante",,0
+254,0,"Todd","Taylor",,0
+255,0,"Kenneth","Ross",,0
+256,0,"John W.","Harding",,0
+257,0,"David W.","Hammonds",,0
+258,0,"Richard","Harding",,0
+259,0,"Michael","McDonald",,0
+260,0,"Fred","Synder",,0
+261,0,"Carole J.","Garcia",,0
+262,0,"Gene","Nelson",,0
+263,0,"Larry","Smith",,0
+264,0,"Robin G. Vert","Rubel",,0
+265,0,"Wilma L.","Rodgers",,0
+266,0,"Rose","Riley",,0
+267,0,"Joseph Hawley","McKnight",,1
+268,0,"Charles","Nathan",,1
+269,0,"Ginger","Van Meek",,0
+270,0,"Cheri","Spino",,0
+271,0,"Howard S.","Horn",,0
+272,0,"Richard A.","Horn",,0
+273,1,,,,0
+274,0,"Cynthia","Farlow",,0
+275,1,,,,0
+276,0,"Robert S.","Seidel",,0
+277,0,"Winona","Butler",,0
+278,0,"Mark","Grosser",,0
+279,1,,,,0
+280,0,"Walt","Quinn",,1
+281,0,"Herb J.","Fricke","PE",0
+282,0,"Kevin","Paul",,0
+283,0,"Kevin","Paul",,0
+284,0,"Julia","Hopkins",,1
+285,0,"Patricia","Paul",,0
+286,0,"Patricia","Paul",,0
+287,0,"Patricia","Paul",,0
+288,0,"Rhonda","Friedlander",,1
+289,0,,,,1
+290,0,,,,1
+291,0,"Nicole","Bowman",,0
+292,0,"Nicole","Bowman",,0
+293,0,,,,0
+294,0,"Nathan","Smith","Mr.",0
+295,0,"Linda","Silvas","Ms.",0
+296,0,"Linda","Silvas","Ms.",0
+297,0,"Linda","Silvas","Ms.",0
+298,0,"Linda","Silvas","Ms.",0
+299,0,"Linda","Silvas","Ms.",1
+300,0,"Linda","Silvas","Ms.",0
+301,0,"Lorna","Marsh","Ms.",0
+302,0,"Robert","Owens-Greygrass","Mr.",0
+303,0,"Robert",,,0
+304,0,"Robert","Owens-Greygrass","Mr.",0
+305,0,"Robert","Owens-Greygrass","Mr.",0
+306,0,"Robert","Owens-Greygrass","Mr.",0
+307,0,"Robert","Owens-Greygrass","Mr.",0
+308,0,"Melissa","Kuhuski","Ms.",0
+309,0,"Melissa","Kuhuski","Ms.",0
+310,0,"Patrice","Walters","Ms.",0
+311,0,"Melissa","Kuhuski","Ms.",0
+312,0,"Kathryn","Frye","Ms.",0
+313,0,"Kathryn","Frye","Ms.",0
+314,0,"Kathryn","Frye","Ms.",0
+315,0,,,,0
+316,0,"Kathryn","Frye","Ms.",0
+317,0,"Dacia","Whitworth",,0
+318,0,"Gene","Schmerer","Mr.",0
+319,0,"Gene","Schmerer","Mr.",0
+320,0,"Michael","Van Pelt","Mr.",1
+321,0,"Jill","Holmdson",,0
+322,0,"Linda","Rusch","Ms.",0
+323,0,"Heidi","DeLorme","Ms.",0
+324,0,"Michael","Rawley","Mr.",0
+325,0,"Michael","Rawley","Mr.",0
+326,0,"Micheal","Rawley","Mr.",0
+327,0,"Robert","Heleniak","Mr.",0
+328,0,"Bryan","McConnell","Mr.",0
+329,0,"Tony","Bybee",,0
+330,0,"Tony","Bybee",,0
+331,0,,,,0
+332,0,"James","Angle",,0
+333,0,"Alicia","Finney",,1
+334,0,"Jessica","Joseph",,0
+335,0,"Jessie","Hunt",,0
+336,0,"Sean","Spain",,0
+337,0,"Darlene","Johnson",,0
+338,0,"Darlene","Johnson",,0
+339,0,"Tony","Bybee",,0
+340,0,"James","Angle",,0
