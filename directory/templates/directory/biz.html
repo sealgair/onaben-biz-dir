@@ -16,10 +16,10 @@
 		{% endif %}
 	</h1>
 	
-	{% if biz.owner_set.all %}
+	{% if biz.owners.all %}
 	<ul>
 	<lh>Owned By:</lh>
-	{% for owner in biz.owner_set.all %}
+	{% for owner in biz.owners.all %}
 		<li> {{ owner.first_name }} {{ owner.last_name }} </li>
 	{% endfor %}
 	</ul>

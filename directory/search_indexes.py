@@ -13,4 +13,4 @@ class CategoryIndex(indexes.SearchIndex):
     text = indexes.CharField(document=True, use_template=True)
 
 site.register(Business, BusinessIndex)
-site.register(Category, CategoryIndex)
+#site.register(Category, CategoryIndex)

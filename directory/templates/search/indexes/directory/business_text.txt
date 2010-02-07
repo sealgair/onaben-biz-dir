@@ -1,7 +1,7 @@
 {{ object.name }}
 {{ object.description }}
 
-{% for owner in object.owner_set.all %}
+{% for owner in object.owners.all %}
     {{ owner.last_name }}, {{ owner.first_name }}
     {{ owner.first_name }} {{ owner.last_name }}
 {% endfor %}
