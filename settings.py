@@ -84,16 +84,28 @@ TEMPLATE_DIRS = (
 )
 
 INSTALLED_APPS = (
+    #django base
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.admin',
+    
+    #third-party
+    'haystack',
+    
+    #onaben
     'directory',
     'bannerad',
 )
 
+# directory settings
 POPULAR_CATEGORY_COUNT = 10
+
+# haystack settings
+HAYSTACK_SITECONF = 'onaben.search_sites'
+HAYSTACK_SEARCH_ENGINE = 'whoosh'
+HAYSTACK_WHOOSH_PATH = os.path.join(PROJECT_ROOT, 'whoosh', 'index')
 
 try:
     from settings_local import *

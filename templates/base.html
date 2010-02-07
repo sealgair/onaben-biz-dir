@@ -37,9 +37,9 @@
 			<a href="{% url list show_by='category' %}">All Categories</a>
 		</span>
 		{% block search %}
-		<form action="{% url list show_by=show_by %}" method="post">
+		<form action="" method="post">
 			<input type="text" name="search" id="search" value="{{ search }}"/>
-			<input type="submit" value="search {{ show_by_pl }}"/>
+			<input type="submit" value="search"/>
 		</form>
 		{% endblock %}
 	</td>

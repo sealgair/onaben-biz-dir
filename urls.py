@@ -6,7 +6,8 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    url(r'^directory/', include('onaben.directory.urls')),
+    url(r'^directory/', include('directory.urls')),
+    url(r'^search/', include('haystack.urls'), name="search"),
     url(r'^admin/(.*)', admin.site.root),
 )
 

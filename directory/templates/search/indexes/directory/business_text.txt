@@ -1,0 +1,13 @@
+{{ object.name }}
+{{ object.description }}
+
+{% for owner in object.owner_set.all %}
+    {{ owner.last_name }}, {{ owner.first_name }}
+    {{ owner.first_name }} {{ owner.last_name }}
+{% endfor %}
+
+{% for cat in object.category_set.all %}
+    {{ cat }}
+{% endfor %}
+
+{{ object.website }}

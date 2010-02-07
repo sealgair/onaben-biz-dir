@@ -2,6 +2,9 @@ from django.db import models, connection
 from datetime import datetime
 
 class AdvancedManager(models.Manager):
+    """
+    """
+    
     def search(self, search=""):
         data = self.get_query_set()
         if not search:
@@ -42,10 +45,13 @@ class Category(models.Model):
     @staticmethod
     def search_fields():
         return ['name']
+    
     def name_url(self):
         return name_to_url(self.name)
+    
     def __unicode__(self):
         return self.name
+    
     def alpha(self):
         return self.name.upper()[0]
 

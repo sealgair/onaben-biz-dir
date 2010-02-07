@@ -8,3 +8,5 @@ www/media/img/banners/*
 *.svn*
 .project
 .pydevproject
+whoosh/index/*
+pip-log.txt
