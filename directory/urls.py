@@ -8,7 +8,6 @@ parts = {}
 parts['type'] = r'(?P<show_by>\w*)'
 parts['name'] = r'(?P<name>.*)'
 parts['alpha'] = r'letter/(?P<alpha>[A-Z])'
-parts['search'] = r'search/(?P<search>[\w\s]*)'
 parts['page'] = r'(?P<page>[0-9]*)'
 
 urlpatterns = patterns('onaben.directory.views',
@@ -19,12 +18,8 @@ urlpatterns = patterns('onaben.directory.views',
     
     url(r'^{type}/?$'.format(**parts), 'show_list', name='list'),
     url(r'^{type}/{page}$'.format(**parts), 'show_list', name='list'),
-    url(r'^{type}/{search}$'.format(**parts), 'show_list', name='list'),
-    url(r'^{type}/{search}/{page}$'.format(**parts), 'show_list', name='list'),
     url(r'^{type}/{alpha}$'.format(**parts), 'show_list', name='list'),
     url(r'^{type}/{alpha}/{page}$'.format(**parts), 'show_list', name='list'),
-    url(r'^{type}/{search}/{alpha}$'.format(**parts), 'show_list', name='list'),
-    url(r'^{type}/{search}/{alpha}/{page}$'.format(**parts), 'show_list', name='list'),
     url(r'^{type}/name={name}$'.format(**parts), 'show_detail', name='one'),
 )
 

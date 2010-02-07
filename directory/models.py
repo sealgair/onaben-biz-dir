@@ -1,19 +1,11 @@
-from django.db import models, connection
 from datetime import datetime
+
+from django.db import models, connection
+from django.core.urlresolvers import reverse
 
 class AdvancedManager(models.Manager):
     """
     """
-    
-    def search(self, search=""):
-        data = self.get_query_set()
-        if not search:
-            return data
-        
-        q = models.Q()
-        for f in self.model.search_fields():
-            q = q | models.Q(**{f+"__icontains":search})
-        return data.filter(q)
     
     def alpha(self, letter=""):
         data = self.get_query_set()
@@ -29,9 +21,8 @@ class AdvancedManager(models.Manager):
         alphabet = [a[0] for a in cursor.fetchall()]
         return alphabet
     
-    def alpha_index(self, letter="A", search=""):
-        data = self.search(search)
-        return data.filter(name__lt=letter).count()
+    def alpha_index(self, letter="A"):
+        return self.get_query_set().filter(name__lt=letter).count()
     
 class Category(models.Model):
     class Meta:
@@ -42,12 +33,9 @@ class Category(models.Model):
     
     name = models.CharField(max_length=64)
     
-    @staticmethod
-    def search_fields():
-        return ['name']
-    
-    def name_url(self):
-        return name_to_url(self.name)
+    def get_absolute_url(self):
+        return reverse('one', kwargs={'show_by': 'category', 
+                                      'name': name_to_url(self.name)})
     
     def __unicode__(self):
         return self.name
@@ -99,20 +87,17 @@ class Business(models.Model):
     categories = models.ManyToManyField(Category)
     owners = models.ManyToManyField(Owner)
     
-    def nameField(self):
-        return "name"
+    def get_absolute_url(self):
+        return reverse('one', kwargs={'show_by': 'business', 
+                                      'name': name_to_url(self.name)})
     
-    @staticmethod
-    def search_fields():
-        return ['name']
-        return ['name', 'website', 'email', 'description', 'owner__first_name', 'owner__last_name']
-    def name_url(self):
-        return name_to_url(self.name)
     def safe_email(self):
         #if self.email == None: return ""
         return self.email.replace("@", " (AT) ").replace(".", " (DOT) ")
+    
     def alpha(self):
         return self.name.upper()[0]
+    
     def __unicode__(self):
         return self.name
 

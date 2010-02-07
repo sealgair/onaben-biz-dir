@@ -17,18 +17,13 @@ def manager_by(show_by):
     else:
         raise Http404("show by type '%s' not found" % show_by)
 
-def show_list(request, show_by="business", search="", alpha="", page=1, page_size=10):
+def show_list(request, show_by="business", alpha="", page=1, page_size=10):
     manager = manager_by(show_by)
     
-    if (request.method == 'POST'):
-        search = request.POST['search']
-    if (search):
-        data = manager.search(search)
-    else:
-        data = manager.all()
+    data = manager.all()
     
     if (alpha):
-        page = manager.alpha_index(alpha, search)/page_size+page
+        page = manager.alpha_index(alpha)/page_size+page
     
     pages = Paginator(data, page_size)    
     try: # Make sure page request is an int. If not, deliver first page.
@@ -45,14 +40,11 @@ def show_list(request, show_by="business", search="", alpha="", page=1, page_siz
     if prev_page >= page: prev_page = None
     
     render_args = {'show_by':show_by,
-                   'search':search,
                    'data': data_page.object_list,
                    'alphabet': manager.alphabet(),
                    'next_page': next_page, 
                    'prev_page': prev_page,
                    'num_pages': pages.num_pages}
-    if (search != ""):
-        render_args['search'] = search
     if (alpha != ""):
         render_args['alpha'] = alpha
     return render_to_response('directory/list.html', render_args,

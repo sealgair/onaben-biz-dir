@@ -67,7 +67,7 @@
 	
 	<ul> <lh>Categories	</lh>
 	{% for cat in biz.category_set.all %}
-		<li><a href="{% url one show_by='category' name=cat.name_url %}">{{ cat }}</a></li>
+		<li><a href="{{ cat.get_absolute_url }}">{{ cat }}</a></li>
 	{% empty %}
 		<li> None </li>
 	{% endfor %}

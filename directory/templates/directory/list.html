@@ -12,7 +12,7 @@
 	{% for letter in alphabet %}
 	<h2>{{letter.grouper}}</h2>
 		{% for item in letter.list %}
-		<p><a href="{% url one show_by=show_by name=item.name_url %}">{{ item.name }}</a>
+		<p><a href="{{ item.get_absolute_url }}">{{ item.name }}</a>
 		{% if item.businesses %}
 			({{item.businesses.all.count}} Business{%ifnotequal item.businesses.all.count 1%}es{%endifnotequal%})
 		{% endif %}

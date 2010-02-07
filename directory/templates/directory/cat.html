@@ -12,7 +12,7 @@
 	
 	<ul>
 	{% for biz in cat.business_set.all %}
-		<li><a href="{% url one show_by='business' name=biz.name_url %}">{{ biz.name }}</a></li>
+		<li><a href="{{ biz.get_absolute_url }}">{{ biz.name }}</a></li>
 	{% empty %}
 		<li> None </li>
 	{% endfor %}

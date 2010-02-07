@@ -52,7 +52,7 @@
 		{% block leftmenu %}
 		<ol> <lh>Popular Categories<br/></lh>
 		{% for cat in popcats %}
-			<li><a href="{% url one show_by='category' name=cat.name_url %}">{{ cat }}<br/>({{ cat.biz_num }} businesses)</a></li>
+			<li><a href="{{ cat.get_absolute_url }}">{{ cat }}<br/>({{ cat.biz_num }} businesses)</a></li>
 		{% endfor %}
 		</ol>
 		<p>Market your Native-owned business or Tribal enterprise for FREE with the ONABEN NW Native American Business Directory.</p>
