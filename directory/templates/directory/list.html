@@ -17,9 +17,9 @@
 			({{item.businesses.all.count}} Business{%ifnotequal item.businesses.all.count 1%}es{%endifnotequal%})
 		{% endif %}
 		</p>
-		{% if item.category_set %}
+		{% if item.categories %}
 			<ul> <lh> Categories </lh>
-			{% for cat in item.category_set.all %}
+			{% for cat in item.categories.all %}
 				<li>{{cat}}</li>
 			{% endfor %}
 			</ul>

@@ -10,7 +10,7 @@ def popular_categories(request):
     """
     context = {}
     
-    popcats = Category.objects.annotate(biz_num=Count('business')).order_by('-biz_num')
+    popcats = Category.objects.annotate(biz_num=Count('businesses')).order_by('-biz_num')
     context['popcats'] = popcats[:settings.POPULAR_CATEGORY_COUNT]
     
     return context

@@ -11,7 +11,7 @@
 	</h1>
 	
 	<ul>
-	{% for biz in cat.business_set.all %}
+	{% for biz in cat.businesses.all %}
 		<li><a href="{{ biz.get_absolute_url }}">{{ biz.name }}</a></li>
 	{% empty %}
 		<li> None </li>

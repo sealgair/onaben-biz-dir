@@ -15,10 +15,11 @@ class BusinessAdmin(admin.ModelAdmin):
     date_hierarchy = 'date_registered'
     fieldsets = (
                  (None,
-                      {'fields': ('name', 'description', ('website', 'email',), ('categories', 'owners'))}),
+                      {'fields': ('name', 'description', ('website', 'email',), ('categories',))}),
                  ('Operating info',
                       {'classes': ('collapse',),
-                       'fields': (('start_date', 'end_date'), ('full_time_employees', 'part_time_employees'),
+                       'fields': (('start_date', 'end_date', 'date_registered', 'last_updated',),
+                                  ('full_time_employees', 'part_time_employees'),
                                   ('home_based', 'still_operating'), 'sic_or_cert_type')
                        }),
                  ('Demographic info',
@@ -31,16 +32,18 @@ class BusinessAdmin(admin.ModelAdmin):
                        }),
                  ('Internal info',
                       {'classes': ('collapse',),
-                       'fields': ('referred_by', 'other_notes', 
+                       'fields': ('moderation', 'referred_by', 'other_notes', 
                                   ('ready_to_print','will_publish','will_advertise'))
                        }),
                 )
-    inlines = [AddressInline, PhoneNumberInline]
-    #raw_id_fields = ("categories","owners")
+    inlines = [OwnerInline, AddressInline, PhoneNumberInline]
     
-    'date_registered',
-    'last_updated',
+    list_display = ('name', 'moderation')
+    list_filter = ('moderation', )
+    
+    filter_horizontal = ('categories', )
+    
+    
     
 admin.site.register(Business, BusinessAdmin)
-admin.site.register(Owner)
 admin.site.register(Category)

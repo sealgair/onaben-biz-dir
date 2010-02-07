@@ -26,9 +26,9 @@
 	{% endif %}
 	
 	<ul>
-	{% if biz.phonenumber_set.all %}
+	{% if biz.phone_numbers.all %}
 	<lh>Phone Number s :</lh>
-	{% for phone in biz.phonenumber_set.all %}
+	{% for phone in biz.phone_numbers.all %}
 		<li> {{ phone.phone_type }}: {{ phone.phone_number }}
 		{% if phone.extension %}
 		ext {{ phone.extension }}
@@ -50,7 +50,7 @@
 	
 	<p>{{ biz.description }}</p>
 	
-	{% for addy in biz.address_set.all %}
+	{% for addy in biz.addresses.all %}
 	{% if not biz.do_not_publish_addy %}
 	<p>
 		{{ addy.addy_type }} Address:<br/>
@@ -60,13 +60,13 @@
 	</p>
 	{% endif %}
 	{% endfor %}
-	{% for phone in biz.bizphonenumber_set.all %}
+	{% for phone in biz.phone_numbers.all %}
 	{{ phone.phone_type }}: {{ phone.phone_number }}
 	{% if phone.extension %} {{ phone.extension }} {% endif %}
 	{% endfor %}
 	
 	<ul> <lh>Categories	</lh>
-	{% for cat in biz.category_set.all %}
+	{% for cat in biz.categories.all %}
 		<li><a href="{{ cat.get_absolute_url }}">{{ cat }}</a></li>
 	{% empty %}
 		<li> None </li>

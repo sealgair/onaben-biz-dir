@@ -1,13 +1,13 @@
 """
 """
-from django.forms.models import inlineformset_factory
 from django.shortcuts import render_to_response
 from django.http import Http404, HttpResponseRedirect
 from django.core.paginator import Paginator
 from django.template import RequestContext
+from django.core.urlresolvers import reverse
 
-from directory.models import Business, Category, Address, PhoneNumber
-from directory.forms import BusinessForm
+from directory.models import Business, Category
+from directory.forms import BasicBizForm as BusinessForm
 
 def manager_by(show_by):
     if show_by.lower() == "business":
@@ -67,22 +67,15 @@ def register(request):
     """
     Registration form view
     """
-    biz = Business()
-    AddressFormset = inlineformset_factory(Business, Address, extra=1, can_delete=False)
-    PhoneFormset = inlineformset_factory(Business, PhoneNumber, extra=1, can_delete=False)
     if request.method == 'POST':
-        biz_form = BusinessForm(request.POST, instance=biz)
-        addy_formset = AddressFormset(request.POST, instance=biz)
-        phone_formset = PhoneFormset(request.POST, instance=biz)
+        biz_form = BusinessForm(request.POST)
         
-        if biz_form.isValid() and addy_formset.isValid():
-            return HttpResponseRedirect('/welcome')
+        if biz_form.is_valid():
+            biz_form.save()
+            return HttpResponseRedirect(reverse('splash'))
     else:
-        biz_form = BusinessForm(instance=biz)
-        addy_formset = AddressFormset(instance=biz)
-        phone_formset = PhoneFormset(instance=biz)
+        biz_form = BusinessForm()
     return render_to_response('directory/register.html', 
-                              {'biz_form':biz_form, 
-                               'addy_formset':addy_formset, 
-                               'phone_formset':phone_formset}, 
+                              {'biz_form': biz_form}, 
                               context_instance=RequestContext(request))
+

@@ -43,14 +43,9 @@ class Category(models.Model):
     def alpha(self):
         return self.name.upper()[0]
 
-class Owner(models.Model):
-    tribe = models.BooleanField(default=False)
-    first_name = models.CharField(max_length=64)
-    last_name = models.CharField(max_length=64)
-    title = models.CharField(max_length=64, null=True, default=None)
-    onaben_client = models.BooleanField(default=False)
-    def __unicode__(self):
-        return "%s, %s" % (self.last_name, self.first_name)
+MODERATION_TYPES = (('Pending', 'Pending'),
+                    ('Approved', 'Approved'),
+                    ('Rejected', 'Rejected'))
 
 class Business(models.Model):
     class Meta:
@@ -84,8 +79,11 @@ class Business(models.Model):
     ready_to_print = models.BooleanField(default=False)
     publish_online = models.BooleanField(default=False)
     other_notes = models.CharField(max_length=512, null=True)
-    categories = models.ManyToManyField(Category)
-    owners = models.ManyToManyField(Owner)
+    categories = models.ManyToManyField(Category, related_name="businesses")
+    
+    moderation = models.CharField(max_length=16, null=False, 
+                                  choices = MODERATION_TYPES,
+                                  default = 'Pending')
     
     def get_absolute_url(self):
         return reverse('one', kwargs={'show_by': 'business', 
@@ -101,13 +99,23 @@ class Business(models.Model):
     def __unicode__(self):
         return self.name
 
+class Owner(models.Model):
+    business = models.ForeignKey(Business, related_name="owners", null=True, blank=False)
+    tribe = models.BooleanField(default=False)
+    first_name = models.CharField(max_length=64)
+    last_name = models.CharField(max_length=64)
+    title = models.CharField(max_length=64, null=True, default=None)
+    onaben_client = models.BooleanField(default=False)
+    def __unicode__(self):
+        return "%s, %s" % (self.last_name, self.first_name)
+
 ADDY_TYPES = (('Mailing','Mailing'),
               ('Physical','Physical'),
               ('Mailing & Physical','Mailing & Physical'))
 class Address(models.Model):
     class Meta:
         verbose_name_plural = "Addresses"
-    business = models.ForeignKey(Business)
+    business = models.ForeignKey(Business, related_name="addresses")
     street = models.CharField(max_length=64)
     city = models.CharField(max_length=32)
     state = models.CharField(max_length=2)
@@ -126,7 +134,7 @@ PHONE_TYPES = (("Phone","Phone"),
                )
 
 class PhoneNumber(models.Model):
-    business = models.ForeignKey(Business)
+    business = models.ForeignKey(Business, related_name="phone_numbers")
     phone_type = models.CharField(max_length=32, null=True, default="Phone", choices=PHONE_TYPES)
     phone_number = models.CharField(max_length=16)
     extension = models.CharField(max_length=32, null=True, default=None)

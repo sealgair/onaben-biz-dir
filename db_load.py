@@ -4,7 +4,7 @@ import time
 import codecs
 os.environ["PYTHONPATH"] = "/home/chase/Documents/Code/django/"
 os.environ["DJANGO_SETTINGS_MODULE"] = "onaben.settings"
-from onaben.directory.models import *
+from directory.models import Business, Address, Category, Owner, PhoneNumber
 
 dataDir = "/home/chase/Documents/Code/django/onaben/directory/data/NorthwestNativeABizDir/"
 if len(sys.argv) > 1:
@@ -93,7 +93,8 @@ for fields in parseFile("tblBizInfo.txt"):
                    last_updated = formatDate(fields["Last Updated"]),
                    ready_to_print = int(fields["ReadytoPrint"]),
                    publish_online = int(fields["Publish Online"]),
-                   other_notes = fields["OtherNotes"])
+                   other_notes = fields["OtherNotes"],
+                   moderation = "Approved")
     biz.save()
 
 "tblBizCategories: CategoryID, Business Category"
@@ -137,8 +138,9 @@ for fields in parseFile("tblBiz-OwnerLink.txt"):
     if fields["BizOwnerID"] and fields["NativeBizID"]:
         try:
             biz = Business.objects.get(id=fields["NativeBizID"])
-            biz.owners.add(Owner.objects.get(id=fields["BizOwnerID"]))
-            biz.save()
+            owner = Owner.objects.get(id=fields["BizOwnerID"])
+            owner.business = biz
+            owner.save()
         except:
             pass #not all owners will necessarily exist
 
