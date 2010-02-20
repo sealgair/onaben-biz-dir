@@ -49,13 +49,14 @@ form#register span {
 .selector {
 	float: left;
 	clear: both;
-	width: 100%;
+	width: 400px;
 }
 form#register
 .selector li {
 	border: 0;
 }
-.selector .selector-available {
+.selector .selector-available,
+.selector .selector-chosen {
     float: left;
 	width: 100%;
 }
@@ -78,17 +79,17 @@ form#register
 form#register
 .selector select {
     width: 100%;
-	height: 10em;
+	height: 9em;
 }
 form#register
 .selector .selector-chooser {
     float: left;
-	padding-left: 18em;
+	margin-left: 174px;
 }
-.selector-add,
-.selector-remove {
+form#register a.selector-add,
+form#register a.selector-remove {
 	display: block;
-	text-indent: -3000px;
+	color: transparent;
 	width: 16px;
 	height: 16px;
 }
@@ -99,7 +100,3 @@ form#register
     background-image:url(/media/img/admin/selector_stacked-remove.gif);
 }
 
-.selector .selector-chosen {
-    float: left;
-    width: 100%;
-}
