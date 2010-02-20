@@ -13,7 +13,13 @@ admin.autodiscover()
 from haystack.views import basic_search
 from haystack.forms import SearchForm
 
+
+js_info_dict = {
+    'packages': (),
+}
+
 urlpatterns = patterns('',
+    url(r'^jsi18n/$', 'django.views.i18n.javascript_catalog', js_info_dict),
     url(r'^directory/', include('directory.urls')),
     #url(r'^search/', include('haystack.urls')),
     url(r'^search/', basic_search, dict(form_class=SearchForm), name='search'),

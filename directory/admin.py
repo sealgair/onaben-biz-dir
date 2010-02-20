@@ -41,7 +41,7 @@ class BusinessAdmin(admin.ModelAdmin):
     list_display = ('name', 'moderation')
     list_filter = ('moderation', )
     
-    filter_horizontal = ('categories', )
+    filter_vertical = ('categories', )
     
     
     

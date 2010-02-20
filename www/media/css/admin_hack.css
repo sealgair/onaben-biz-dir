@@ -1,0 +1,105 @@
+form#register span {
+    float: right;	
+}
+
+.calendarbox {
+	border: 1px solid black;
+	background: #D9DCC2;
+}
+
+.calendarbox a {
+	color: #363636;
+}
+
+.calendarbox .calendarnav-previous {
+	position: absolute;
+	left: 0;
+}
+.calendarbox .calendarnav-next {
+    position: absolute;
+	right: 0;
+}
+.calendarbox .calendarnav-previous,
+.calendarbox .calendarnav-next {
+	color: black;
+	display: block;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 1px 4px 2px;
+}
+
+.calendarbox .calendar {
+    border-bottom: 1px solid black;
+    background: white;
+}
+
+.calendarbox .calendar caption {
+	background: #D9DCC2;
+	border-bottom: 1px solid black;
+}
+
+.calendar-shortcuts,
+.calendar-cancel {
+	text-align: center;
+	margin: 5px 0;
+}
+
+
+
+.selector {
+	float: left;
+	clear: both;
+	width: 100%;
+}
+form#register
+.selector li {
+	border: 0;
+}
+.selector .selector-available {
+    float: left;
+	width: 100%;
+}
+.selector h2,
+.selector .selector-filter {
+    background: #D9DCC2;
+    border: 1px solid gray;
+	border-bottom: 0;
+	margin: 0;
+	padding: 4px;
+	padding-left: 10px;
+}
+.selector .selector-chooseall {
+	display: none;
+}
+.selector .selector-available .selector-filter #id_categories_input {
+    float: none;
+	width: 90%;
+}
+form#register
+.selector select {
+    width: 100%;
+	height: 10em;
+}
+form#register
+.selector .selector-chooser {
+    float: left;
+	padding-left: 18em;
+}
+.selector-add,
+.selector-remove {
+	display: block;
+	text-indent: -3000px;
+	width: 16px;
+	height: 16px;
+}
+.selector-add {
+    background-image:url(/media/img/admin/selector_stacked-add.gif);
+}
+.selector-remove {
+    background-image:url(/media/img/admin/selector_stacked-remove.gif);
+}
+
+.selector .selector-chosen {
+    float: left;
+    width: 100%;
+}

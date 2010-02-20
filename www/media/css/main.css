@@ -146,6 +146,7 @@ form#register li {
 form#register label {
 	float: left;
 	font-weight: bold;
+	padding: 2px;
 }
 form#register input,
 form#register select,

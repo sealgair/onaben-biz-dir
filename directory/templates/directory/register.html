@@ -6,21 +6,26 @@
 	{{ block.super }}
 {% endblock %}
 
+{% block extra_head %}
+    <link rel="StyleSheet" href="/static/css/admin_hack.css" type="text/css">
+    {{ biz_form.media.render }}
+{% endblock %}
+
 {% block content %}
 <form id="register" action="{% url register %}" method="POST">
     
     <h4 style="float:left;clear:both;">Owners:</h4>
     {{ biz_form.owners.management_form }}
     {% for owner_form in biz_form.owners.forms %}
-    <ul>{{owner_form.as_ul}}</ul>
+    <ul>{{ owner_form.as_ul }}</ul>
     {% endfor %}
 	
-	<ul>{{biz_form.as_ul}}</ul>
+	<ul>{{ biz_form.as_ul }}</ul>
 	
 	<h4 style="float:left;clear:both;">Address:</h4>
 	{{ biz_form.addresses.management_form }}
 	{% for addy_form in biz_form.addresses.forms %}
-	<ul>{{addy_form.as_ul}}</ul>
+	<ul>{{ addy_form.as_ul }}</ul>
 	{% endfor %}
 	
 	<h4 style="float:left;clear:both;">Phone Number:</h4>
