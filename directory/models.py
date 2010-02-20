@@ -58,7 +58,7 @@ class Business(models.Model):
     nw_region = models.BooleanField(default=True)
     website = models.URLField(null=True, default=None)
     email = models.EmailField(null=True, default=None)
-    description = models.CharField(max_length=2000, default='')
+    description = models.TextField(default='')
     start_date = models.DateField()
     end_date = models.DateField(null=True)
     home_based = models.BooleanField(default=True)

@@ -15,11 +15,18 @@ class BasicBizForm(forms.ModelForm):
     
     class Meta:
         model = Business
-        fields = ('name', 
-                  'description', 
-                  'categories', 
+        fields = ('name',
+                  'description',
+                  'website',
+                  'email', 
                   'start_date',
-                  'date_registered')
+                  'date_registered',
+                  'categories',
+                  'full_time_employees',
+                  'part_time_employees',
+                  'sic_or_cert_type',
+                  'home_based',
+                 )
 
 class AddressForm(forms.ModelForm):
     class Meta:
