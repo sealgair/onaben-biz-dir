@@ -4,18 +4,43 @@ from datetime import date
 
 from django import forms
 from directory.models import Category, Business, Address, PhoneNumber, Owner
-from django.forms.models import modelformset_factory
+from django.forms.models import modelformset_factory, inlineformset_factory
 from django.forms.formsets import formset_factory
 
 from django.contrib.admin import widgets
 
-class BasicBizForm(forms.ModelForm):
+class AddressForm(forms.ModelForm):
+    class Meta:
+        model = Address
+        exclude = ('business')
+
+class PhoneForm(forms.ModelForm):
+    class Meta:
+        model = PhoneNumber
+        exclude = ('business')
+
+class OwnerForm(forms.ModelForm):
+    tribe = forms.BooleanField(label="Tribe Member", required=False)
+    onaben_client = forms.BooleanField(label="ONABEN Member", required=False)
+    class Meta:
+        model = Owner
+        fields = ('first_name',
+                  'last_name',
+                  'title',
+                  'tribe',
+                  'onaben_client',
+                 )
+
+AddressFormset = formset_factory(AddressForm, extra=1, can_delete=False)
+PhoneFormset = formset_factory(PhoneForm, extra=1, can_delete=False)
+OwnerFormset = inlineformset_factory(Business, Owner, form=OwnerForm, extra=1, can_delete=False)
+
+class BusinessForm(forms.ModelForm):
     name = forms.CharField(label="Business Name")
     description = forms.CharField(widget=forms.Textarea)
     start_date = forms.DateField(widget=widgets.AdminDateWidget, initial=date.today())
     categories = forms.ModelMultipleChoiceField(Category.objects.all(), required=False,
                                                 widget=widgets.FilteredSelectMultiple("Categories", True))
-    
     class Meta:
         model = Business
         fields = ('name',
@@ -29,27 +54,22 @@ class BasicBizForm(forms.ModelForm):
                   'sic_or_cert_type',
                   'home_based',
                  )
+    
+    def __init__(self, *args, **kwargs):
+        self.owners = OwnerFormset(*args, **kwargs)
+        return super(BusinessForm, self).__init__(prefix="owners", *args, **kwargs)
+    
+    def is_valid(self, *args, **kwargs):
+        return super(BusinessForm, self).is_valid(*args, **kwargs) \
+                and self.owners.is_valid(*args, **kwargs)
+        
+    def save(self, *args, **kwargs):
+        biz = super(BusinessForm, self).save(*args, **kwargs)
+        self.owners.instance = biz
+        self.owners.save(*args, **kwargs)
+        return biz
 
-class AddressForm(forms.ModelForm):
-    class Meta:
-        model = Address
-        exclude = ('business')
-
-class PhoneForm(forms.ModelForm):
-    class Meta:
-        model = PhoneNumber
-        exclude = ('business')
-
-class OwnerForm(forms.ModelForm):
-    class Meta:
-        model = Owner
-        exclude = ('businesses')
-
-AddressFormset = formset_factory(AddressForm, extra=1, can_delete=False)
-PhoneFormset = formset_factory(PhoneForm, extra=1, can_delete=False)
-OwnerFormset = formset_factory(OwnerForm, extra=1, can_delete=False)
-
-class BusinessForm(forms.ModelForm):
+class BigBusinessForm(forms.ModelForm):
     name = forms.CharField(label="Business Name")
     description = forms.CharField(widget=forms.Textarea)
     home_based = forms.BooleanField(initial=False)
@@ -82,7 +102,7 @@ class BusinessForm(forms.ModelForm):
                   'other_notes')
     
     def __init__(self, data = None, *args, **kwargs):
-        super(BusinessForm, self).__init__(data, *args, **kwargs)
+        super(BigBusinessForm, self).__init__(data, *args, **kwargs)
     
         self.addresses = AddressFormset(data)
         self.phone_numbers = PhoneFormset(data)

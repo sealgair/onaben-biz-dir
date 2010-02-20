@@ -110,7 +110,7 @@ class Owner(models.Model):
     tribe = models.BooleanField(default=False)
     first_name = models.CharField(max_length=64)
     last_name = models.CharField(max_length=64)
-    title = models.CharField(max_length=64, null=True, default=None)
+    title = models.CharField(max_length=64, null=True, blank=True, default=None)
     onaben_client = models.BooleanField(default=False)
     def __unicode__(self):
         return "%s, %s" % (self.last_name, self.first_name)

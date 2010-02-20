@@ -13,6 +13,10 @@ class PhoneNumberInline(admin.TabularInline):
 
 class BusinessAdmin(admin.ModelAdmin):
     date_hierarchy = 'date_registered'
+    list_display = ('name', 'moderation', 'date_registered')
+    list_editable = ('moderation', )
+    list_filter = ('moderation', )
+    
     fieldsets = (
                  (None,
                       {'fields': ('name', 'description', ('website', 'email',), ('categories',))}),
@@ -36,14 +40,9 @@ class BusinessAdmin(admin.ModelAdmin):
                                   ('ready_to_print','will_publish','will_advertise'))
                        }),
                 )
-    inlines = [OwnerInline, AddressInline, PhoneNumberInline]
-    
-    list_display = ('name', 'moderation', 'date_registered')
-    list_editable = ('moderation', )
-    list_filter = ('moderation', )
-    
     filter_vertical = ('categories', )
-    
+    inlines = [OwnerInline, AddressInline, PhoneNumberInline]
+    save_on_top = True
     
     
 admin.site.register(Business, BusinessAdmin)

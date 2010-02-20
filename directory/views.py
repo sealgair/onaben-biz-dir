@@ -7,7 +7,7 @@ from django.template import RequestContext
 from django.core.urlresolvers import reverse
 
 from directory.models import Business, Category
-from directory.forms import BasicBizForm as BusinessForm
+from directory.forms import BusinessForm
 
 def manager_by(show_by):
     if show_by.lower() == "business":
@@ -67,8 +67,8 @@ def register(request):
     """
     Registration form view
     """
+    biz_form = BusinessForm(request.POST)
     if request.method == 'POST':
-        biz_form = BusinessForm(request.POST)
         
         if biz_form.is_valid():
             biz_form.save()
