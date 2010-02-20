@@ -18,7 +18,7 @@ class BusinessAdmin(admin.ModelAdmin):
                       {'fields': ('name', 'description', ('website', 'email',), ('categories',))}),
                  ('Operating info',
                       {'classes': ('collapse',),
-                       'fields': (('start_date', 'end_date', 'date_registered', 'last_updated',),
+                       'fields': (('start_date', 'end_date',),
                                   ('full_time_employees', 'part_time_employees'),
                                   ('home_based', 'still_operating'), 'sic_or_cert_type')
                        }),
@@ -38,7 +38,8 @@ class BusinessAdmin(admin.ModelAdmin):
                 )
     inlines = [OwnerInline, AddressInline, PhoneNumberInline]
     
-    list_display = ('name', 'moderation')
+    list_display = ('name', 'moderation', 'date_registered')
+    list_editable = ('moderation', )
     list_filter = ('moderation', )
     
     filter_vertical = ('categories', )

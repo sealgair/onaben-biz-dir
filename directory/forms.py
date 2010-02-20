@@ -1,3 +1,7 @@
+"""
+"""
+from datetime import date
+
 from django import forms
 from directory.models import Category, Business, Address, PhoneNumber, Owner
 from django.forms.models import modelformset_factory
@@ -8,10 +12,9 @@ from django.contrib.admin import widgets
 class BasicBizForm(forms.ModelForm):
     name = forms.CharField(label="Business Name")
     description = forms.CharField(widget=forms.Textarea)
-    start_date = forms.DateField(widget = widgets.AdminDateWidget)
-    date_registered = forms.DateField(widget = widgets.AdminDateWidget)
-    categories = forms.ModelMultipleChoiceField(Category.objects.all(),
-                                                widget = widgets.FilteredSelectMultiple("Categories", True))
+    start_date = forms.DateField(widget=widgets.AdminDateWidget, initial=date.today())
+    categories = forms.ModelMultipleChoiceField(Category.objects.all(), required=False,
+                                                widget=widgets.FilteredSelectMultiple("Categories", True))
     
     class Meta:
         model = Business
@@ -20,7 +23,6 @@ class BasicBizForm(forms.ModelForm):
                   'website',
                   'email', 
                   'start_date',
-                  'date_registered',
                   'categories',
                   'full_time_employees',
                   'part_time_employees',

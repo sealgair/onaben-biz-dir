@@ -55,31 +55,37 @@ class Business(models.Model):
     objects = AdvancedManager()
        
     name = models.CharField(max_length=255, unique=True)
-    nw_region = models.BooleanField(default=True)
-    website = models.URLField(null=True, default=None)
-    email = models.EmailField(null=True, default=None)
+    website = models.URLField(null=True, default=None, blank=True)
+    email = models.EmailField(null=True, default=None, blank=True)
     description = models.TextField(default='')
-    start_date = models.DateField()
+    
+    start_date = models.DateField(default=datetime.now())
     end_date = models.DateField(null=True)
     home_based = models.BooleanField(default=True)
     full_time_employees = models.IntegerField(default=1)
     part_time_employees = models.IntegerField(default=0)
+    
+    nw_region = models.BooleanField(default=True)
     woman = models.BooleanField(default=False)
     minority = models.BooleanField(default=False)
-    sic_or_cert_type = models.CharField(max_length=64, null=True)
+    sic_or_cert_type = models.CharField(max_length=64, null=True, blank=True)
+    
     email_list = models.BooleanField(default=False)
     mailing_list = models.BooleanField(default=False)
     contact_for_marketing = models.BooleanField(default=False)
-    referred_by = models.CharField(max_length=64)
+    
+    referred_by = models.CharField(max_length=64, blank=True)
     still_operating = models.BooleanField(default=False)
     will_publish = models.BooleanField(default=False)
     will_advertise = models.BooleanField(default=False)
-    date_registered = models.DateField() 
-    last_updated = models.DateField(default=datetime.now())
+    
+    date_registered = models.DateField(auto_now_add=True)
+    last_updated = models.DateField(auto_now=True)
+    
     ready_to_print = models.BooleanField(default=False)
     publish_online = models.BooleanField(default=False)
     other_notes = models.CharField(max_length=512, null=True)
-    categories = models.ManyToManyField(Category, related_name="businesses")
+    categories = models.ManyToManyField(Category, related_name="businesses", blank=True)
     
     moderation = models.CharField(max_length=16, null=False, 
                                   choices = MODERATION_TYPES,
