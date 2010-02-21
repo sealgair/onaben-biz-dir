@@ -7,7 +7,6 @@
 {% endblock %}
 
 {% block extra_head %}
-    <script src="/media/js/core.js" type="text/javascript"></script>
     <link rel="StyleSheet" href="/static/css/admin_hack.css" type="text/css">
     {{ biz_form.media.render }}
 {% endblock %}
@@ -15,26 +14,17 @@
 {% block content %}
 <form id="register" action="{% url register %}" method="POST">
     
-    <h4 style="float:left;clear:both;">Owners:</h4>
-    {{ biz_form.subforms.owners.management_form }}
-    {% for owner_form in biz_form.subforms.owners.forms %}
-    <ul>{{ owner_form.as_ul }}</ul>
-    {% endfor %}
+	<h4 style="float:left;clear:both;">Owners:</h4>
+	{{ biz_form.formsets.owners.as_ul }}
 	
 	<h4 style="float:left;clear:both;">Business Info:</h4>
 	<ul>{{ biz_form.as_ul }}</ul>
 	
-	<h4 style="float:left;clear:both;">Address:</h4>
-	{{ biz_form.subforms.addresses.management_form }}
-	{% for addy_form in biz_form.subforms.addresses.forms %}
-	<ul>{{ addy_form.as_ul }}</ul>
-	{% endfor %}
+	<h4 style="float:left;clear:both;">Addresses:</h4>
+	{{ biz_form.formsets.addresses.as_ul }}
 	
-	<h4 style="float:left;clear:both;">Phone Number:</h4>
-	{{ biz_form.subforms.phone_numbers.management_form }}
-	{% for phone_form in biz_form.subforms.phone_numbers.forms %}
-	<ul>{{phone_form.as_ul}}</ul>
-	{% endfor %}
+	<h4 style="float:left;clear:both;">Phone Numbers:</h4>
+	{{ biz_form.formsets.phone_numbers.as_ul }}
 	
 	<input type="submit" value="Register"/>
 </form>
