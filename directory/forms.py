@@ -4,7 +4,7 @@ from datetime import date
 
 from django import forms
 from directory.models import Category, Business, Address, PhoneNumber, Owner
-from django.forms.models import inlineformset_factory
+from django.forms.models import inlineformset_factory, BaseInlineFormSet
 
 from django.contrib.admin import widgets
 
@@ -32,15 +32,22 @@ class OwnerForm(forms.ModelForm):
                   'onaben_client',
                  )
 
-AddressFormset = inlineformset_factory(Business, Address, form=AddressForm, extra=1, can_delete=False)
-PhoneFormset = inlineformset_factory(Business, PhoneNumber, form=PhoneForm, extra=1, can_delete=False)
-OwnerFormset = inlineformset_factory(Business, Owner, form=OwnerForm, extra=1, can_delete=False)
+AddressFormset = inlineformset_factory(Business, Address, 
+                                       form=AddressForm,
+                                       extra=1, can_delete=False)
+PhoneFormset = inlineformset_factory(Business, PhoneNumber, 
+                                     form=PhoneForm, 
+                                     extra=2, can_delete=False)
+OwnerFormset = inlineformset_factory(Business, Owner, 
+                                     form=OwnerForm,
+                                     extra=1, can_delete=False)
 
 class BusinessForm(forms.ModelForm):
     name = forms.CharField(label="Business Name")
     description = forms.CharField(widget=forms.Textarea)
     start_date = forms.DateField(widget=widgets.AdminDateWidget, initial=date.today())
     categories = forms.ModelMultipleChoiceField(Category.objects.all(), required=False,
+                                                label="Categories (please select no more than three)",
                                                 widget=widgets.FilteredSelectMultiple("Categories", True))
     class Meta:
         model = Business
@@ -60,6 +67,14 @@ class BusinessForm(forms.ModelForm):
                      'addresses': AddressFormset, 
                      'phone_numbers': PhoneFormset,
                     }
+    
+    def clean_categories(self):
+        data = self.cleaned_data['categories']
+        if len(data) > 3:
+            raise forms.ValidationError("Please select no more than three categories")
+
+        return data
+
     
     def __init__(self, *args, **kwargs):
         self.subforms = {}
