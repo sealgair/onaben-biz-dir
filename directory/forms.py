@@ -4,12 +4,13 @@ from datetime import date
 
 from django import forms
 from directory.models import Category, Business, Address, PhoneNumber, Owner
-from django.forms.models import modelformset_factory, inlineformset_factory
-from django.forms.formsets import formset_factory
+from django.forms.models import inlineformset_factory
 
 from django.contrib.admin import widgets
 
 class AddressForm(forms.ModelForm):
+    do_not_publish_addy = forms.BooleanField(label="Do not publish address", required=False, initial=False)
+    country_outside_us = forms.CharField(label="Country (if outside U.S.)", required=False)
     class Meta:
         model = Address
         exclude = ('business')
@@ -31,8 +32,8 @@ class OwnerForm(forms.ModelForm):
                   'onaben_client',
                  )
 
-AddressFormset = formset_factory(AddressForm, extra=1, can_delete=False)
-PhoneFormset = formset_factory(PhoneForm, extra=1, can_delete=False)
+AddressFormset = inlineformset_factory(Business, Address, form=AddressForm, extra=1, can_delete=False)
+PhoneFormset = inlineformset_factory(Business, PhoneNumber, form=PhoneForm, extra=1, can_delete=False)
 OwnerFormset = inlineformset_factory(Business, Owner, form=OwnerForm, extra=1, can_delete=False)
 
 class BusinessForm(forms.ModelForm):
@@ -55,89 +56,29 @@ class BusinessForm(forms.ModelForm):
                   'home_based',
                  )
     
+    subform_types = {'owners': OwnerFormset, 
+                     'addresses': AddressFormset, 
+                     'phone_numbers': PhoneFormset,
+                    }
+    
     def __init__(self, *args, **kwargs):
-        self.owners = OwnerFormset(*args, **kwargs)
-        return super(BusinessForm, self).__init__(prefix="owners", *args, **kwargs)
+        self.subforms = {}
+        for key, formset in self.subform_types.items():
+            self.subforms[key] = formset(prefix=key, *args, **kwargs)
+        return super(BusinessForm, self).__init__(*args, **kwargs)
     
     def is_valid(self, *args, **kwargs):
-        return super(BusinessForm, self).is_valid(*args, **kwargs) \
-                and self.owners.is_valid(*args, **kwargs)
-        
-    def save(self, *args, **kwargs):
-        biz = super(BusinessForm, self).save(*args, **kwargs)
-        self.owners.instance = biz
-        self.owners.save(*args, **kwargs)
-        return biz
-
-class BigBusinessForm(forms.ModelForm):
-    name = forms.CharField(label="Business Name")
-    description = forms.CharField(widget=forms.Textarea)
-    home_based = forms.BooleanField(initial=False)
-    full_time_employees = forms.IntegerField(min_value=0, initial=1,
-                                             label="Full time employees", 
-                                             widget=forms.TextInput(attrs={"class":"number"}))
-    part_time_employees = forms.IntegerField(min_value=0, initial=0,
-                                             label="Part time employees", 
-                                             widget=forms.TextInput(attrs={"class":"number"}))
-    other_notes = forms.CharField(widget=forms.Textarea)
-    
-    class Meta:
-        model = Business
-        fields = ('name',
-                  'website',
-                  'email',
-                  'description',
-                  'full_time_employees',
-                  'part_time_employees',
-                  'start_date',
-                  'sic_or_cert_type',
-                  'referred_by',
-                  'woman',
-                  'minority',
-                  'home_based',
-                  'nw_region',
-                  'email_list',
-                  'mailing_list',
-                  'categories',
-                  'other_notes')
-    
-    def __init__(self, data = None, *args, **kwargs):
-        super(BigBusinessForm, self).__init__(data, *args, **kwargs)
-    
-        self.addresses = AddressFormset(data)
-        self.phone_numbers = PhoneFormset(data)
-        self.owners = OwnerFormset(data)
-    
-    def clean_categories(self):
-        cats = self.cleaned_data['categories']
-        
-        max_cats = 3
-        cat_count = len(cats)
-        if cat_count > max_cats:
-            raise forms.ValidationError("Too many categories defined (found %s, max is %s)" %
-                                        (cat_count, max_cats))
-        return cats
-    
-    def is_valid(self, *args, **kwargs):
-        valid = super(BusinessForm, self).is_valid()
-        
-        valid = valid & self.addresses.is_valid()
-        valid = valid & self.phone_numbers.is_valid()
-        valid = valid & self.owners.is_valid()
-        
+        valid =  super(BusinessForm, self).is_valid(*args, **kwargs)
+        for subform in self.subforms.values():
+            valid = valid and subform.is_valid(*args, **kwargs)
         return valid
         
     def save(self, *args, **kwargs):
         biz = super(BusinessForm, self).save(*args, **kwargs)
         
-        for addy in self.addresses.save():
-            addy.business = biz
-            addy.save()
+        for subform in self.subforms.values():
+            subform.instance = biz
+            subform.save(*args, **kwargs)
         
-        for phone in self.phone_numbers.save():
-            phone.business = biz
-            phone.save()
-        
-        for owner in self.owners.save():
-            owner.businesses.add(biz)
-            owner.save()
+        return biz
+

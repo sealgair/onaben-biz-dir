@@ -126,7 +126,7 @@ class Address(models.Model):
     city = models.CharField(max_length=32)
     state = models.CharField(max_length=2)
     zipcode = models.CharField(max_length=16)
-    country_outside_us = models.CharField(max_length=64, null=True, default=None)
+    country_outside_us = models.CharField(max_length=64, null=True, blank=True)
     addy_type = models.CharField(max_length=64, default='Mailing & Physical', choices=ADDY_TYPES)
     do_not_publish_addy = models.BooleanField(default=True)
     def __unicode__(self):
@@ -143,7 +143,7 @@ class PhoneNumber(models.Model):
     business = models.ForeignKey(Business, related_name="phone_numbers")
     phone_type = models.CharField(max_length=32, null=True, default="Phone", choices=PHONE_TYPES)
     phone_number = models.CharField(max_length=16)
-    extension = models.CharField(max_length=32, null=True, default=None)
+    extension = models.CharField(max_length=32, null=True, blank=True)
     def __unicode__(self):
         return self.phone_number
 

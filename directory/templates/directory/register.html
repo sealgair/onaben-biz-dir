@@ -16,8 +16,8 @@
 <form id="register" action="{% url register %}" method="POST">
     
     <h4 style="float:left;clear:both;">Owners:</h4>
-    {{ biz_form.owners.management_form }}
-    {% for owner_form in biz_form.owners.forms %}
+    {{ biz_form.subforms.owners.management_form }}
+    {% for owner_form in biz_form.subforms.owners.forms %}
     <ul>{{ owner_form.as_ul }}</ul>
     {% endfor %}
 	
@@ -25,14 +25,14 @@
 	<ul>{{ biz_form.as_ul }}</ul>
 	
 	<h4 style="float:left;clear:both;">Address:</h4>
-	{{ biz_form.addresses.management_form }}
-	{% for addy_form in biz_form.addresses.forms %}
+	{{ biz_form.subforms.addresses.management_form }}
+	{% for addy_form in biz_form.subforms.addresses.forms %}
 	<ul>{{ addy_form.as_ul }}</ul>
 	{% endfor %}
 	
 	<h4 style="float:left;clear:both;">Phone Number:</h4>
-	{{ biz_form.phone_numbers.management_form }}
-	{% for phone_form in biz_form.phone_numbers.forms %}
+	{{ biz_form.subforms.phone_numbers.management_form }}
+	{% for phone_form in biz_form.subforms.phone_numbers.forms %}
 	<ul>{{phone_form.as_ul}}</ul>
 	{% endfor %}
 	

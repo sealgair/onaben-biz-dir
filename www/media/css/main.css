@@ -170,3 +170,10 @@ form#register select#id_categories {
 	width: 400px;
 	height: 200px;
 }
+
+form#register .errorlist li {
+	color: red;
+	padding: 2px;
+	margin: 0px;
+	margin-right: 8px;
+}
