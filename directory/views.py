@@ -2,52 +2,37 @@
 """
 from django.shortcuts import render_to_response
 from django.http import Http404, HttpResponseRedirect
-from django.core.paginator import Paginator
 from django.template import RequestContext
 from django.core.urlresolvers import reverse
 
+from utils.alphapaginator import AlphaPaginator
 from directory.models import Business, Category
 from directory.forms import BusinessForm
 
 def manager_by(show_by):
-    if show_by.lower().startswith("business"):
+    if show_by.lower() in ("business", "businesses"):
         return Business.objects
-    elif show_by.lower().startswith("category"):
+    elif show_by.lower() in ("category", "categories"):
         return Category.objects
     else:
         raise Http404("show by type '%s' not found" % show_by)
 
 def show_list(request, show_by="businesses", page=1, page_size=10):
     manager = manager_by(show_by)
-    
     data = manager.all()
-    page = str(page)
     
-    if (str(page).isalpha()):
-        alpha = str(page)[0].upper
-        page = (manager.alpha_index(alpha)/page_size)+1
-    
-    pages = Paginator(data, page_size)    
-    try: # Make sure page request is an int. If not, deliver first page.
-        page = int(page)
-    except ValueError:
-        page = 1    
-    #make sure page is a valid number
-    page = min(max(page, 1), pages.num_pages) #not less than one & not greater than available pages
+    pages = AlphaPaginator(data, page_size)
     data_page = pages.page(page)
     
-    next_page = min(page+1, pages.num_pages)    
-    if next_page <= page: next_page = None
-    prev_page = max(page-1, 1)
-    if prev_page >= page: prev_page = None
+    context = {'show_by': show_by,
+               'paginator': pages,
+               'data': data_page.object_list}
+    if data_page.next_page_number() < pages.num_pages:
+        context['next_page'] = data_page.next_page_number()
+    if data_page.previous_page_number() > 0:
+        context['prev_page'] = data_page.previous_page_number()
     
-    render_args = {'show_by':show_by,
-                   'data': data_page.object_list,
-                   'alphabet': manager.alphabet(),
-                   'next_page': next_page, 
-                   'prev_page': prev_page,
-                   'num_pages': pages.num_pages}
-    return render_to_response('directory/list.html', render_args,
+    return render_to_response('directory/list.html', context,
                               context_instance=RequestContext(request))
 
 def show_detail(request, show_by="business", name=""):

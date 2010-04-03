@@ -1,41 +1,51 @@
 {% extends "base.html" %}
 
 {% block content %}
-	{% for letter in alphabet %}
-	<a href="{% url list show_by=show_by page=letter %}">{{letter}}</a>
-	{% endfor %}
-
-	{% if search %}
-	<h3> {{ show_by_pl }} matching "{{search}}" </h3>
-	{% endif %}
-	{% regroup data by alpha as alphabet %}
-	{% for letter in alphabet %}
-	<h2>{{letter.grouper}}</h2>
-		{% for item in letter.list %}
-		<p><a href="{{ item.get_absolute_url }}">{{ item.name }}</a>
-		{% if item.businesses %}
-			({{item.businesses.all.count}} Business{%ifnotequal item.businesses.all.count 1%}es{%endifnotequal%})
-		{% endif %}
-		</p>
-		{% if item.categories %}
-			<ul> <lh> Categories </lh>
-			{% for cat in item.categories.all %}
-				<li>{{cat}}</li>
-			{% endfor %}
-			</ul>
-		{% endif %}
-		{% endfor %}
-	{% endfor %}
+    {% for letter in paginator.alphabet %}
+        <a href="{% url list show_by=show_by page=letter %}">{{ letter }}</a>
+    {% endfor %}
+    
+    {% if search %}
+        <h3>{{ show_by_pl }} matching "{{ search }}" </h3>
+    {% endif %}
+    
+    {% regroup data by name|upper|first as alphabet %}
+    {% for letter in alphabet %}
+        <h2>{{ letter.grouper }}</h2>
+        {% for item in letter.list %}
+            <p>
+                <a href="{{ item.get_absolute_url }}">{{ item.name }}</a>
+                {% if item.businesses %}
+                ({{ item.businesses.all.count }} 
+                Business{% ifnotequal item.businesses.all.count 1 %}es{% endifnotequal %})
+                {% endif %}
+            </p>
+            {% if item.categories %}
+            <ul>
+                <lh>Categories:</lh>
+                {% for cat in item.categories.all %}
+                <li>
+                    {{cat}}
+                </li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
 {% endblock %}
 
 {% block pagination %}
-	{% if prev_page %}
-		<a href="{% url list show_by=show_by page=1 %}">First Page</a> |
-		<a href="{% url list show_by=show_by page=prev_page %}">Previous Page</a>
-	{% endif %}
-	{% if prev_page and next_page %} | {% endif %} 
-	{% if next_page %}
-		<a href="{% url list show_by=show_by page=next_page %}">Next Page</a> |
-		<a href="{% url list show_by=show_by page=num_pages %}">Last Page</a>
-	{% endif %}
+<div id="paginator">
+    {% if prev_page %}
+        <a href="{% url list show_by=show_by page=1 %}">First Page</a>
+        |
+        <a href="{% url list show_by=show_by page=prev_page %}">Previous Page</a>
+    {% endif %} 
+    {% if prev_page and next_page %} | {% endif %} 
+    {% if next_page %}
+        <a href="{% url list show_by=show_by page=next_page %}">Next Page</a>
+        |
+        <a href="{% url list show_by=show_by page=paginator.num_pages %}">Last Page</a>
+    {% endif %}
+</div>
 {% endblock %}

@@ -29,6 +29,9 @@ body {
 #main td {	
 	vertical-align: top;
 }
+#main lh {
+    font-weight: bold;
+}
 
 #header {
 	background-color: #f6f8eb;
@@ -123,6 +126,10 @@ body {
 #belt {
 	background: black url(../img/belt.gif) repeat-x;
 	height: 24px;
+}
+
+#paginator {
+    text-align: center;
 }
 
 #footer {

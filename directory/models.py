@@ -1,36 +1,13 @@
 from datetime import datetime
 
-from django.db import models, connection
+from django.db import models
 from django.core.urlresolvers import reverse
 from django.utils.http import urlquote
-
-class AdvancedManager(models.Manager):
-    """
-    """
-    
-    def alpha(self, letter=""):
-        data = self.get_query_set()
-        if not letter:
-            return data
-        
-        return data.filter(name__istartswith = letter)
-    
-    def alphabet(self):
-        cursor = connection.cursor()
-        query = "SELECT DISTINCT UPPER(SUBSTRING(name,1,1)) FROM {table} order by name;".format(table = self.model._meta.db_table)
-        cursor.execute(query)
-        alphabet = [a[0] for a in cursor.fetchall()]
-        return alphabet
-    
-    def alpha_index(self, letter="A"):
-        return self.get_query_set().filter(name__lt=letter).count()
     
 class Category(models.Model):
     class Meta:
         verbose_name_plural = "Categories"
         ordering = ["name"]
-    
-    objects = AdvancedManager()
     
     name = models.CharField(max_length=64)
     
@@ -53,8 +30,6 @@ class Business(models.Model):
         verbose_name_plural = "Businesses"
         ordering = ["name"]
         
-    objects = AdvancedManager()
-       
     name = models.CharField(max_length=255, unique=True)
     website = models.URLField(null=True, default=None, blank=True)
     email = models.EmailField(null=True, default=None, blank=True)
