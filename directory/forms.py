@@ -103,6 +103,7 @@ class BusinessForm(forms.ModelForm):
         return super(BusinessForm, self).__init__(*args, **kwargs)
     
     def is_valid(self, *args, **kwargs):
+        
         valid =  super(BusinessForm, self).is_valid(*args, **kwargs)
         for subform in self.formsets.values():
             valid = valid and subform.is_valid(*args, **kwargs)

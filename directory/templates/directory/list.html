@@ -2,7 +2,7 @@
 
 {% block content %}
 	{% for letter in alphabet %}
-	<a href="{% url list show_by=show_by search=search alpha=letter %}">{{letter}}</a>
+	<a href="{% url list show_by=show_by alpha=letter %}">{{letter}}</a>
 	{% endfor %}
 
 	{% if search %}
@@ -30,12 +30,12 @@
 
 {% block pagination %}
 	{% if prev_page %}
-		<a href="{% url list show_by=show_by search=search page=1 %}">First Page</a> |
-		<a href="{% url list show_by=show_by search=search page=prev_page %}">Previous Page</a>
+		<a href="{% url list show_by=show_by page=1 %}">First Page</a> |
+		<a href="{% url list show_by=show_by page=prev_page %}">Previous Page</a>
 	{% endif %}
 	{% if prev_page and next_page %} | {% endif %} 
 	{% if next_page %}
-		<a href="{% url list show_by=show_by search=search page=next_page %}">Next Page</a> |
-		<a href="{% url list show_by=show_by search=search page=num_pages %}">Last Page</a>
+		<a href="{% url list show_by=show_by page=next_page %}">Next Page</a> |
+		<a href="{% url list show_by=show_by page=num_pages %}">Last Page</a>
 	{% endif %}
 {% endblock %}

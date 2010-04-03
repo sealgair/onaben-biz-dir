@@ -2,6 +2,7 @@ from datetime import datetime
 
 from django.db import models, connection
 from django.core.urlresolvers import reverse
+from django.utils.http import urlquote
 
 class AdvancedManager(models.Manager):
     """
@@ -35,7 +36,7 @@ class Category(models.Model):
     
     def get_absolute_url(self):
         return reverse('one', kwargs={'show_by': 'category', 
-                                      'name': name_to_url(self.name)})
+                                      'name': urlquote(self.name)})
     
     def __unicode__(self):
         return self.name
@@ -93,7 +94,7 @@ class Business(models.Model):
     
     def get_absolute_url(self):
         return reverse('one', kwargs={'show_by': 'business', 
-                                      'name': name_to_url(self.name)})
+                                      'name': urlquote(self.name)})
     
     def safe_email(self):
         #if self.email == None: return ""
@@ -146,30 +147,3 @@ class PhoneNumber(models.Model):
     extension = models.CharField(max_length=32, null=True, blank=True)
     def __unicode__(self):
         return self.phone_number
-
-url_reps = [('%','%25'),
-            ('$','%24'),
-            ('&','%26'),
-            ('+','%2B'),
-            (',','%2C'),
-            ('/','%2F'),
-            (':','%3A'),
-            (';','%3B'),
-            ('=','%3D'),
-            ('?','%3F'),
-            ('@','%40'),
-            (' ','%20'),
-            ('"','%22'),
-            ('<','%3C'),
-            ('>','%3E'),
-            ('#','%23')]
-def name_to_url(name):
-    url = name
-    for char, code in url_reps:
-        url = url.replace(char, code)
-    return url
-def name_from_url(url):
-    name = url
-    for char, code in url_reps:
-        name = name.replace(code, char)
-    return name
