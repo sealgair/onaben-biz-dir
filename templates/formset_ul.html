@@ -4,9 +4,6 @@
 {% for form in formset.forms %}
 <div class="subform">
 	<ul>{{ form.as_ul }}</ul>
-	<input type="submit" class="drop-form" name="{{ formset.prefix }}-del" value="Delete"/>
 </div>
 {% endfor %}
-
-<input type="submit" class="extend-formset" name="{{ formset.prefix }}-add" value="Add Another"/>
 </div>
