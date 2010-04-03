@@ -10,20 +10,22 @@ from directory.models import Business, Category
 from directory.forms import BusinessForm
 
 def manager_by(show_by):
-    if show_by.lower() == "business":
+    if show_by.lower().startswith("business"):
         return Business.objects
-    elif show_by.lower() == "category":
+    elif show_by.lower().startswith("category"):
         return Category.objects
     else:
         raise Http404("show by type '%s' not found" % show_by)
 
-def show_list(request, show_by="business", alpha="", page=1, page_size=10):
+def show_list(request, show_by="businesses", page=1, page_size=10):
     manager = manager_by(show_by)
     
     data = manager.all()
+    page = str(page)
     
-    if (alpha):
-        page = manager.alpha_index(alpha)/page_size+page
+    if (str(page).isalpha()):
+        alpha = str(page)[0].upper
+        page = (manager.alpha_index(alpha)/page_size)+1
     
     pages = Paginator(data, page_size)    
     try: # Make sure page request is an int. If not, deliver first page.
@@ -45,8 +47,6 @@ def show_list(request, show_by="business", alpha="", page=1, page_size=10):
                    'next_page': next_page, 
                    'prev_page': prev_page,
                    'num_pages': pages.num_pages}
-    if (alpha != ""):
-        render_args['alpha'] = alpha
     return render_to_response('directory/list.html', render_args,
                               context_instance=RequestContext(request))
 

@@ -36,8 +36,8 @@
 <tr id="searchbar">
 	<td colspan="2">
 		<span id="all">
-			<a href="{% url list show_by='business' %}">All Businesses</a>
-			<a href="{% url list show_by='category' %}">All Categories</a>
+			<a href="{% url list show_by='businesses' %}">All Businesses</a>
+			<a href="{% url list show_by='categories' %}">All Categories</a>
 		</span>
 		{% block search %}
 		<form action="{% url search %}" method="get">

@@ -2,7 +2,7 @@
 
 {% block content %}
 	{% for letter in alphabet %}
-	<a href="{% url list show_by=show_by alpha=letter %}">{{letter}}</a>
+	<a href="{% url list show_by=show_by page=letter %}">{{letter}}</a>
 	{% endfor %}
 
 	{% if search %}

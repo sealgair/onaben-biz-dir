@@ -16,11 +16,9 @@ urlpatterns = patterns('onaben.directory.views',
     
     url(r'^register/?$', 'register', name='register'),
     
-    url(r'^{type}/?$'.format(**parts), 'show_list', name='list'),
-    url(r'^{type}/{page}$'.format(**parts), 'show_list', name='list'),
-    url(r'^{type}/{alpha}$'.format(**parts), 'show_list', name='list'),
-    url(r'^{type}/{alpha}/{page}$'.format(**parts), 'show_list', name='list'),
-    url(r'^{type}/name={name}$'.format(**parts), 'show_detail', name='one'),
+    url(r'^(?P<show_by>(?:businesses|categories))/?$'.format(**parts), 'show_list', name='list'),
+    url(r'^(?P<show_by>(?:businesses|categories))/(?P<page>(?:\d+|\w))/$'.format(**parts), 'show_list', name='list'),
+    url(r'^(?P<show_by>(?:business|category))/(?P<name>.*)/$'.format(**parts), 'show_detail', name='one'),
 )
 
 urlpatterns += patterns('',
