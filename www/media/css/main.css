@@ -6,6 +6,7 @@ body {
 	background: white url(../img/ONABENSageBackground.jpg) repeat;
 	font-family: Verdana,Helvetica;
 	font-size: 10px;
+    text-align: center;
 }
 
 #main {
@@ -20,6 +21,7 @@ body {
 	border: 2px solid black;
 	font-family: Verdana,Helvetica;
 	font-size: 10px;
+    text-align: left;
 }
 
 #main a {
@@ -74,12 +76,16 @@ body {
 	font-weight: bold;
 }
 #left-menu ol {
+    margin: 0;
 	padding-left: 30px;
 	padding-bottom: 10px;
+    width: 100%;
+    zoom: 1;
 }
 #left-menu li {
 	position: relative;
 	top: 10px;
+    width: 100%;
 }
 #left-menu p {
 	padding-left: 30px;
