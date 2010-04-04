@@ -13,37 +13,46 @@ class AlphaPaginator(Paginator):
     def __init__(self, *args, **kwargs):
         """
         Override Paginator.__init__ to also take the parameter 'field'
-        @param field: The field by which to alphabetically organize the pages.  Defaults to 'name'
+        @param field: The field by which to alphabetically organize the pages.
         """
-        self.field = kwargs.get('field', 'name')
+        if 'field' in kwargs:
+            self.field = kwargs.pop('field')
+        else:
+            self.field = None
         super(AlphaPaginator, self).__init__(*args, **kwargs)
     
     def page(self, number):
         """
         Override Paginator.page to accept strings
         if the string isn't a number, it will take the first letter, and find
-        the first page with an object matching that letter
-        """
-        num_str = str(number)
-        if num_str.isdigit():
-            number = int(num_str)
-        else: #fetch page by first letter of configured field
-            letter = num_str[0].lower()
-            alpha_index = self.object_list.filter(name__lt=letter).count()
-            number = (alpha_index/self.per_page)+1
+        the first page with an object matching that letter.
         
-        number = min(max(number, 1), self.num_pages)
+        Default to superclass behavior if self.field is unset
+        """
+        if self.field is not None:
+            num_str = str(number)
+            if num_str.isdigit():
+                number = int(num_str)
+            else: #fetch page by first letter of configured field
+                letter = num_str[0].lower()
+                alpha_index = self.object_list.filter(**{self.field+"__lt": letter}).count()
+                number = (alpha_index/self.per_page)+1
+            
+            number = min(max(number, 1), self.num_pages)
         return super(AlphaPaginator, self).page(number)
     
     def alphabet(self):
         """
         @return: A list containing all of the first letters (capitalized) available
-        in the objects list.
+        in the objects list, or an empty list if self.field is unset
         """
         sql = """
         SELECT DISTINCT UPPER(SUBSTRING({field},1,1)) 
         FROM {table} order by {field};
         """
+        if self.field is None:
+            return []
+        
         cursor = connection.cursor()
         query = sql.format(table=self.object_list.model._meta.db_table,
                            field=self.field)
