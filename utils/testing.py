@@ -12,10 +12,13 @@ from django.conf import settings
 
 class FakeModelTestCase(TestCase):
     """
+    Base test case that sets up fake models from utils.tests.models, and removes them
+    on tear down
     """
     
     def setUp(self):
         """
+        Add utils.tests to installed apps
         """
         self.old_apps = settings.INSTALLED_APPS
         settings.INSTALLED_APPS.append("utils.tests")
@@ -24,6 +27,7 @@ class FakeModelTestCase(TestCase):
     
     def tearDown(self):
         """
+        Set installed apps to previous value
         """
         settings.INSTALLED_APPS = self.old_apps
         loading.cache.loaded = False

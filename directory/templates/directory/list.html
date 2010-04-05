@@ -13,23 +13,25 @@
     {% for letter in alphabet %}
         <h2>{{ letter.grouper }}</h2>
         {% for item in letter.list %}
+        <div class="item-data">
             <p>
-                <a href="{{ item.get_absolute_url }}">{{ item.name }}</a>
+                <a class="item-link" href="{{ item.get_absolute_url }}">{{ item.name }}</a>
                 {% if item.businesses %}
-                ({{ item.businesses.all.count }} 
+                (<span class="biz-count">{{ item.businesses.all.count }}</span>
                 Business{% ifnotequal item.businesses.all.count 1 %}es{% endifnotequal %})
                 {% endif %}
             </p>
             {% if item.categories %}
-            <ul>
+            <ul class="sub-item-data">
                 <lh>Categories:</lh>
                 {% for cat in item.categories.all %}
                 <li>
-                    {{cat}}
+                    <a class="sub-item-link" href="{{ cat.get_absolute_url }}">{{cat}}</a>
                 </li>
                 {% endfor %}
             </ul>
             {% endif %}
+        </div>
         {% endfor %}
     {% endfor %}
 {% endblock %}
@@ -37,15 +39,15 @@
 {% block pagination %}
 <div id="paginator">
     {% if prev_page %}
-        <a href="{% url list show_by=show_by page=1 %}">First Page</a>
+        <a id="first-page" href="{% url list show_by=show_by %}">First Page</a>
         |
-        <a href="{% url list show_by=show_by page=prev_page %}">Previous Page</a>
+        <a id="prev-page" href="{% url list show_by=show_by page=prev_page %}">Previous Page</a>
     {% endif %} 
     {% if prev_page and next_page %} | {% endif %} 
     {% if next_page %}
-        <a href="{% url list show_by=show_by page=next_page %}">Next Page</a>
+        <a id="next-page" href="{% url list show_by=show_by page=next_page %}">Next Page</a>
         |
-        <a href="{% url list show_by=show_by page=paginator.num_pages %}">Last Page</a>
+        <a id="last-page" href="{% url list show_by=show_by page=paginator.num_pages %}">Last Page</a>
     {% endif %}
 </div>
 {% endblock %}

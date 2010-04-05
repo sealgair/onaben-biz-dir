@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, date
 
 from django.db import models
 from django.core.urlresolvers import reverse
@@ -35,8 +35,8 @@ class Business(models.Model):
     email = models.EmailField(null=True, default=None, blank=True)
     description = models.TextField(default='')
     
-    start_date = models.DateField(default=datetime.now())
-    end_date = models.DateField(null=True)
+    start_date = models.DateField(default=date.today())
+    end_date = models.DateField(null=True, blank=True)
     home_based = models.BooleanField(default=True)
     full_time_employees = models.IntegerField(default=1)
     part_time_employees = models.IntegerField(default=0)
@@ -60,7 +60,7 @@ class Business(models.Model):
     
     ready_to_print = models.BooleanField(default=False)
     publish_online = models.BooleanField(default=False)
-    other_notes = models.CharField(max_length=512, null=True)
+    other_notes = models.CharField(max_length=512, null=True, blank=True)
     categories = models.ManyToManyField(Category, related_name="businesses", blank=True)
     
     moderation = models.CharField(max_length=16, null=False, 

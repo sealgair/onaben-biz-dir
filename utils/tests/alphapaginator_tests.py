@@ -1,4 +1,5 @@
 """
+Tests for AlphaPaginator package
 """
 import string
 from utils.testing import FakeModelTestCase
@@ -7,6 +8,7 @@ from utils.tests.models import TestModel
 
 class AlpaPaginatorTest(FakeModelTestCase):
     """
+    Tests for AlphaPaginator class
     """
     
     def test_backwards_compatibility(self):

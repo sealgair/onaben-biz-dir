@@ -27,7 +27,7 @@ def show_list(request, show_by="businesses", page=1, page_size=10):
     context = {'show_by': show_by,
                'paginator': pages,
                'data': data_page.object_list}
-    if data_page.next_page_number() < pages.num_pages:
+    if data_page.next_page_number() <= pages.num_pages:
         context['next_page'] = data_page.next_page_number()
     if data_page.previous_page_number() > 0:
         context['prev_page'] = data_page.previous_page_number()

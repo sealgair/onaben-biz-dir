@@ -41,6 +41,7 @@ class BusinessAdmin(admin.ModelAdmin):
                        }),
                 )
     filter_vertical = ('categories', )
+    search_fields = ('name',)
     inlines = [OwnerInline, AddressInline, PhoneNumberInline]
     save_on_top = True
     
