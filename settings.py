@@ -101,6 +101,8 @@ INSTALLED_APPS = (
     'utils',
 )
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp'
+
 # directory settings
 POPULAR_CATEGORY_COUNT = 10
 

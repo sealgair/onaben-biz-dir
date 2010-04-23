@@ -25,6 +25,14 @@ MODERATION_TYPES = (('Pending', 'Pending'),
                     ('Approved', 'Approved'),
                     ('Rejected', 'Rejected'))
 
+class ApprovedBusinessManager(models.Manager):
+    """
+    Just approved businesses
+    """
+    
+    def get_query_set(self):
+        return super(ApprovedBusinessManager, self).get_query_set().filter(moderation="Approved")
+
 class Business(models.Model):
     class Meta:
         verbose_name_plural = "Businesses"
@@ -66,6 +74,9 @@ class Business(models.Model):
     moderation = models.CharField(max_length=16, null=False, 
                                   choices = MODERATION_TYPES,
                                   default = 'Pending')
+    
+    objects = models.Manager()
+    approved = ApprovedBusinessManager()
     
     def get_absolute_url(self):
         return reverse('one', kwargs={'show_by': 'business', 

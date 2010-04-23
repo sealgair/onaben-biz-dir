@@ -27,7 +27,7 @@
 	
 	<ul>
 	{% if biz.phone_numbers.all %}
-	<lh>Phone Number s :</lh>
+	<lh>Phone Numbers:</lh>
 	{% for phone in biz.phone_numbers.all %}
 		<li> {{ phone.phone_type }}: {{ phone.phone_number }}
 		{% if phone.extension %}

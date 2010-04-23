@@ -11,7 +11,7 @@ from directory.forms import BusinessForm
 
 def manager_by(show_by):
     if show_by.lower() in ("business", "businesses"):
-        return Business.objects
+        return Business.approved
     elif show_by.lower() in ("category", "categories"):
         return Category.objects
     else:
