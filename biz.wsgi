@@ -2,9 +2,13 @@ import os
 import sys
 import site
 
-sys.path.append('/www/onaben/src')
-sys.path.append('/www/onaben/src/onaben')
-site.addsitedir('/www/onaben/lib/python2.4/site-packages')
+PROJECT_ROOT = os.path.dirname(__file__) #.../onaben/src/onaben
+PROJECT_ROOT = os.path.dirname(PROJECT_ROOT) #.../onaben/src
+PROJECT_ROOT = os.path.dirname(PROJECT_ROOT) #.../onaben
+
+sys.path.append(PROJECT_ROOT+'/src')
+sys.path.append(PROJECT_ROOT+'/src/onaben')
+site.addsitedir(PROJECT_ROOT+'/lib/python2.4/site-packages')
 
 os.environ['DJANGO_SETTINGS_MODULE'] = 'onaben.settings'
 

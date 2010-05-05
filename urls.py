@@ -1,7 +1,7 @@
 """
 """
 from django.conf import settings
-from django.conf.urls.defaults import patterns, url, include, handler500
+from django.conf.urls.defaults import *
 from django.views.generic.simple import redirect_to
 from django.core.urlresolvers import reverse
 from django.utils.functional import lazy
