@@ -1,7 +1,8 @@
 # Django settings for onaben project.
 import os
+import dj_database_url
 
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -11,12 +12,9 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-DATABASE_ENGINE = 'mysql'      # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-DATABASE_USER = ''         # Not used with sqlite3.
-DATABASE_NAME = 'onaben_orgbiz'       # Or path to database file if using sqlite3.
-DATABASE_PASSWORD = ''     # Not used with sqlite3.
-DATABASE_HOST = ''             # Set to empty string for localhost. Not used with sqlite3.
-DATABASE_PORT = ''             # Set to empty string for default. Not used with sqlite3.
+DATABASES = {
+    'default': dj_database_url.config(default='postgres://localhost/haikubattle')
+}
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -104,6 +102,15 @@ INSTALLED_APPS = (
 )
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp'
+EMAIL_HOST = 'smtp.sendgrid.net'
+try:
+    EMAIL_HOST_USER = os.environ['SENDGRID_USERNAME']
+    EMAIL_HOST_PASSWORD = os.environ['SENDGRID_PASSWORD']
+except KeyError:
+    pass
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'admin@onaben.org'
 
 # directory settings
 POPULAR_CATEGORY_COUNT = 10
