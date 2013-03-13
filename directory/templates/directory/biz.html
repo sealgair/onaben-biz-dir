@@ -10,7 +10,7 @@
 	<div id="biz-data">
 	<h1>
 		{% if biz.website %}
-		<a href="http://{{ biz.website }}" target="_blank">{{ biz.name }}</a>
+		<a href="{{ biz.website }}" target="_blank">{{ biz.name }}</a>
 		{% else %}
 		{{ biz.name }}
 		{% endif %}

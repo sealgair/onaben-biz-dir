@@ -10,4 +10,5 @@ www/media/img/banners/*
 .pydevproject
 whoosh/index/*
 pip-log.txt
+build
 
